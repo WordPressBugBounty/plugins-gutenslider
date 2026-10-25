@@ -50,7 +50,9 @@ store( 'gutenslider', {
 			if ( el.classList.contains( 'gs-has-lightbox' ) ) {
 				el.addEventListener( 'click', ( event ) => {
 					const slide = event.target.closest( '.swiper-slide' );
+					// defaultPrevented: another script already used the click.
 					if (
+						event.defaultPrevented ||
 						! slide ||
 						event.target.closest(
 							'a, button, input, select, textarea, .wp-lightbox-container'

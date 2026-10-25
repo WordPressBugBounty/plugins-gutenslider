@@ -3,10 +3,11 @@
 /**
  * Freemius SDK: licensing and checkout for Gutenslider Pro, and nothing else.
  *
- * Quiet by design and in wordpress.org compliance mode: anonymous mode (no
- * opt-in screen, no activation redirect, nothing sent unless an admin opts
- * in), no trial, affiliate or Customizer promotions, no deactivation survey,
- * and no Freemius pages in the admin menu. Loaded through Composer
+ * In wordpress.org compliance mode: after a single activation the admin sees
+ * the opt-in screen once, and nothing is sent unless they allow it ("Skip"
+ * sends nothing; the plugin row keeps an "Opt In" link). No reminder notice,
+ * no trial, affiliate or Customizer promotions, no deactivation survey, and
+ * no Freemius pages in the admin menu. Loaded through Composer
  * (vendor/freemius/wordpress-sdk), which also resolves the newest SDK when
  * several plugins bundle it.
  *
@@ -41,17 +42,13 @@ function gutenslider_fs() {
             'has_paid_plans'   => true,
             'has_affiliation'  => false,
             'is_org_compliant' => true,
-            'anonymous_mode'   => true,
+            'anonymous_mode'   => false,
             'menu'             => array(
-                'slug'    => 'gutenslider',
                 'account' => false,
                 'contact' => false,
                 'support' => false,
                 'pricing' => false,
                 'addons'  => false,
-                'parent'  => array(
-                    'slug' => 'options-general.php',
-                ),
             ),
             'is_live'          => true,
         ) );
@@ -61,20 +58,30 @@ function gutenslider_fs() {
 
 gutenslider_fs();
 gutenslider_fs()->add_filter( 'show_deactivation_feedback_form', '__return_false' );
-gutenslider_fs()->add_filter( 'redirect_on_activation', '__return_false' );
+// The opt-in screen's icon ships with the plugin; without it Freemius fetches
+// one from its API on localhost sites, before anyone has opted in.
+gutenslider_fs()->add_filter( 'plugin_icon', function () {
+    return dirname( __DIR__ ) . '/assets/icon.png';
+} );
 gutenslider_fs()->add_filter( 'show_trial', '__return_false' );
 gutenslider_fs()->add_filter( 'show_affiliate_program_notice', '__return_false' );
 gutenslider_fs()->add_filter( 'show_customizer_upsell', '__return_false' );
 gutenslider_fs()->add_filter(
     'show_admin_notice',
     function ( $show, $msg ) {
-        return ( in_array( $msg['id'], array('connect_account', 'premium_activated'), true ) || 'promotion' === $msg['type'] ? false : $show );
+        // The opt-in asks once, on its own screen: no reminders ("update-nag") elsewhere.
+        return ( in_array( $msg['id'], array('connect_account', 'premium_activated'), true ) || in_array( $msg['type'], array('promotion', 'update-nag'), true ) ? false : $show );
     },
     10,
     2
 );
-add_filter( 'plugin_action_links_' . gutenslider_fs()->get_plugin_basename(), function ( $links ) {
-    unset($links['opt-in-or-opt-out gutenslider']);
-    return $links;
-}, WP_FS__DEFAULT_PRIORITY + 1 );
+// The opt-in page has no menu item, so WordPress finds no title for it and
+// warns on PHP 8.1+ (strip_tags( null ) in admin-header.php).
+add_action( 'load-admin_page_gutenslider', function () {
+    global $title;
+    if ( empty( $title ) ) {
+        $title = __( 'Gutenslider', 'gutenslider' );
+        // phpcs:ignore WordPress.WP.GlobalVariablesOverride.Prohibited -- WordPress reads the admin page title from this global.
+    }
+} );
 do_action( 'gutenslider_fs_loaded' );

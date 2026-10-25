@@ -4,7 +4,7 @@ Tags: slider, carousel, slideshow, hero, image slider
 Requires at least: 6.6
 Tested up to: 7.1
 Requires PHP: 7.4
-Stable tag: 7.2.2
+Stable tag: 7.3.1
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -75,9 +75,9 @@ The JavaScript and CSS in `build/` are compiled from the human-readable sources 
 
 == External services ==
 
-The free plugin makes no requests to other servers on its own: no tracking, no remote fonts or scripts, and nothing is sent anywhere from your site. Slide images and videos come from your own Media Library; only video slides from links, which you add yourself, contact the video's platform (see below). On the page, a platform's player loads only when its slide is shown or its play button is clicked; from then on that platform receives the visitor's IP address and browser data, as with any embedded video. Pages without such slides contact nothing.
+The free plugin makes no requests to other servers on its own: no tracking, no remote fonts or scripts, and nothing is sent from your site unless you allow it on the opt-in screen (see Freemius below). Slide images and videos come from your own Media Library; only video slides from links, which you add yourself, contact the video's platform (see below). On the page, a platform's player loads only when its slide is shown or its play button is clicked; from then on that platform receives the visitor's IP address and browser data, as with any embedded video. Pages without such slides contact nothing.
 
-**Freemius (licensing for Gutenslider Pro).** Gutenslider includes the Freemius SDK in anonymous mode: there is no opt-in screen, and the free plugin sends nothing to Freemius. Only if you buy Gutenslider Pro or activate a Pro license, your license key, site address, and the WordPress, PHP and plugin versions are sent to Freemius to check the license and deliver updates. [Terms](https://freemius.com/terms/), [Privacy](https://freemius.com/privacy/)
+**Freemius (opt-in, and licensing for Gutenslider Pro).** Gutenslider includes the Freemius SDK. After you activate the plugin, it asks once whether you want to opt in. Only if you click "Allow & Continue", your WordPress user's name and email address, the site's address and title, the WordPress, PHP and plugin versions, the site language, and whether the plugin is active or uninstalled are sent to Freemius, so we can tell you about security and feature updates; the list of your plugins and themes and the newsletter are separate choices on that screen. "Skip" sends nothing, and you can opt in or out later with the link in the plugin's row on the Plugins screen. If you buy Gutenslider Pro or activate a Pro license, your license key, site address, and the WordPress, PHP and plugin versions are sent to Freemius to check the license and deliver updates. [Terms](https://freemius.com/terms/), [Privacy](https://freemius.com/privacy/)
 
 **YouTube (only for YouTube slides).** When you add YouTube links in the editor, your site asks YouTube for the video titles and sizes (youtube.com/oembed), reads the newest videos of a playlist from its public feed (youtube.com/feeds/videos.xml), and saves the video thumbnails (i.ytimg.com) to your Media Library. With Pro, playlists and channels are read from their pages (youtube.com/playlist, the channel page), and youtube.com/shorts/… tells which videos are Shorts. On the page, a YouTube slide without a saved thumbnail shows YouTube's thumbnail from i.ytimg.com, and the player is loaded from youtube-nocookie.com when the slide is shown or played. [Terms](https://www.youtube.com/t/terms), [Privacy](https://policies.google.com/privacy)
 
@@ -126,6 +126,18 @@ You can help translate Gutenslider at [translate.wordpress.org](https://translat
 3. A carousel with three slides in view.
 
 == Changelog ==
+
+= 7.3.1 =
+_2026-10-25_
+
+* Fix: the divider color picker follows the pointer while dragging (it jumped back and forth); divider colors can be partly transparent now.
+* Fix: arrows that follow the pointer (Pro) with the lightbox on: the left and right thirds turn the slide, the middle third opens the lightbox (one click did both).
+
+= 7.3.0 =
+_2026-10-25_
+
+* After activation, Gutenslider asks once whether you want to opt in to update and security emails through Freemius; nothing is sent unless you allow it, and "Skip" keeps it that way.
+* The plugin directory lists the Slide block again, next to Gutenslider.
 
 = 7.2.2 =
 _2026-10-22_
@@ -203,11 +215,7 @@ _2026-09-28_
 * Styles tab for block padding and spacing.
 * Freemius SDK 2.6.0.
 
-= 5.9.2 =
-* Add links to the plugin description.
 
-= 5.9.1 =
-* Improve compatibility with older Safari versions.
 
 
 

@@ -870,8 +870,11 @@ function DividersPanel( props ) {
 									label={ __( 'Color', 'gutenslider' ) }
 									id={ undefined }
 								>
+									{ /* With alpha, WordPress 7.1's custom color picker drags
+									smoothly; without it, it bounces between two colors. */ }
 									<ColorPalette
 										value={ d.color }
+										enableAlpha
 										onChange={ ( color ) =>
 											set( side, { color: color ?? '' } )
 										}

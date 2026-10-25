@@ -4,7 +4,7 @@
  * Plugin Name:       Gutenslider — Slider Block for the Block Editor
  * Plugin URI:        https://gutenslider.org
  * Description:       A slider block for images, videos and any blocks on top: carousels, hero sliders and fullscreen background sliders, with responsive settings.
- * Version:           7.2.2
+ * Version:           7.3.1
  * Requires at least: 6.6
  * Requires PHP:      7.4
  * Author:            eedee
@@ -25,7 +25,7 @@ if ( function_exists( 'gutenslider_fs' ) ) {
     gutenslider_fs()->set_basename( false, __FILE__ );
     return;
 }
-define( 'GUTENSLIDER_VERSION', '7.2.2' );
+define( 'GUTENSLIDER_VERSION', '7.3.1' );
 define( 'GUTENSLIDER_PLUGIN_FILE', __FILE__ );
 define( 'GUTENSLIDER_PLUGIN_DIR', plugin_dir_path( __FILE__ ) );
 define( 'GUTENSLIDER_PLUGIN_URL', plugin_dir_url( __FILE__ ) );
