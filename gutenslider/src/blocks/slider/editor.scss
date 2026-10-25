@@ -1,0 +1,355 @@
+// The slider in the editor. The front-end stylesheet (style.scss) does the
+// look; this adds paging without Swiper, the "same content on all slides"
+// layout, and the editor's own bits (bar, badges, sidebar pickers).
+
+$ease: cubic-bezier(0.25, 1, 0.5, 1);
+
+.wp-block-eedee-block-gutenslider.gs-editor {
+
+	// Not selected (nor anything in it): a click anywhere selects the
+	// slider itself, above the slides, arrows and dots.
+	&:has(> .gutenslider-editor-overlay) {
+		position: relative;
+	}
+
+	> .gutenslider-editor-overlay {
+		position: absolute;
+		inset: 0;
+		z-index: 30;
+		cursor: default;
+	}
+
+	.eedee-swiper-outer {
+		--gs-min-h: var(--gutenslider-min-height-sm);
+
+		@media (min-width: 601px) {
+			--gs-min-h: var(--gutenslider-min-height-md);
+		}
+
+		@media (min-width: 961px) {
+			--gs-min-h: var(--gutenslider-min-height);
+		}
+
+		&[hidden] {
+			display: none !important;
+		}
+	}
+
+	.gs-editing .swiper-wrapper {
+		transition: transform 0.45s $ease;
+	}
+
+	// Effects that stack slides page like "slide" here; Preview shows them.
+	&.gs-stacked .gs-editing .swiper .swiper-wrapper {
+		display: flex;
+		gap: 0;
+
+		> .swiper-slide {
+			flex: 0 0 100%;
+			grid-area: auto;
+			visibility: visible;
+		}
+	}
+
+	// The editor's arrows and dots page through the slides.
+	.gs-editing {
+
+		.eedee-gutenslider-nav,
+		.swiper-pagination-bullet {
+			cursor: pointer;
+		}
+	}
+
+	// Same content on all slides: the blocks after the slides sit on top of
+	// the slide on show (the front end moves them into their own layer).
+	&.gs-editor-fixed .gs-editing .swiper .swiper-wrapper {
+		position: relative;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		gap: 0;
+		box-sizing: border-box;
+		min-height: var(--gs-min-h);
+		padding: var(--gutenslider-padding-y) var(--gutenslider-padding-x);
+		transform: none;
+
+		> .swiper-slide {
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			left: calc((var(--gs-i) - var(--gs-current, 0)) * (100% + var(--gs-gap, 0px)) / var(--gs-view, 1));
+			width: calc((100% - (var(--gs-view, 1) - 1) * var(--gs-gap, 0px)) / var(--gs-view, 1));
+			min-height: 0;
+			transition: left 0.45s $ease;
+
+			.slide-content {
+				display: none;
+			}
+		}
+
+		> :not(.swiper-slide) {
+			position: relative;
+			z-index: 2;
+		}
+	}
+
+	&.gs-editor-fixed:is(.is-position-top-left, .is-position-top-center, .is-position-top-right) .gs-editing .swiper-wrapper {
+		justify-content: flex-start;
+	}
+
+	&.gs-editor-fixed:is(.is-position-bottom-left, .is-position-bottom-center, .is-position-bottom-right) .gs-editing .swiper-wrapper {
+		justify-content: flex-end;
+	}
+
+	// Slides: the blocks container fills the content area like the front end's.
+	.gutenslider-slide-blocks {
+		display: flex;
+		flex-direction: column;
+		min-width: 0;
+	}
+
+	.gutenslider-is-hidden {
+		opacity: 0.45;
+		outline: 1px dashed currentcolor;
+		outline-offset: -4px;
+	}
+
+	.gutenslider-badge {
+		position: absolute;
+		top: 8px;
+		left: 8px;
+		z-index: 3;
+		padding: 2px 8px;
+		border-radius: 999px;
+		background: rgba(0, 0, 0, 0.7);
+		color: #fff;
+		font: 500 11px/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+		pointer-events: none;
+
+		+ .gutenslider-badge {
+			left: auto;
+			right: 8px;
+		}
+	}
+
+	// Below the slider while it (or a slide) is selected.
+	.gutenslider-editor-bar {
+		display: none;
+		align-items: center;
+		flex-wrap: wrap;
+		gap: 8px;
+		margin-top: 8px;
+		padding: 0 8px 8px;
+		font: 13px/1.4 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+		color: #1e1e1e;
+
+		&__count {
+			margin-inline-end: auto;
+			font-variant-numeric: tabular-nums;
+			color: #757575;
+		}
+	}
+
+	&.is-selected .gutenslider-editor-bar,
+	&.has-child-selected .gutenslider-editor-bar {
+		display: flex;
+	}
+
+	.gutenslider-note {
+		color: #757575;
+		font-size: 12px;
+	}
+}
+
+// Sidebar.
+.gutenslider-device-switch {
+	margin-bottom: 16px;
+}
+
+.gutenslider-style-picker {
+	display: grid;
+	grid-template-columns: repeat(var(--columns, 4), minmax(0, 1fr));
+	gap: 6px;
+
+	.components-button {
+		justify-content: center;
+		height: 44px;
+		padding: 6px;
+		border-radius: 4px;
+		box-shadow: inset 0 0 0 1px #ddd;
+		color: #1e1e1e;
+
+		&.is-pressed {
+			box-shadow: inset 0 0 0 2px var(--wp-admin-theme-color, #3858e9);
+			background: rgba(56, 88, 233, 0.06);
+			color: #1e1e1e;
+		}
+	}
+}
+
+.gutenslider-arrow-preview {
+	display: grid;
+	place-items: center;
+	width: 30px;
+	height: 30px;
+
+	svg {
+		width: 100%;
+		height: 100%;
+	}
+
+	// As the default colors on the front end: white arrow on dark.
+	.bg {
+		fill: #1e1e1e;
+	}
+
+	.arrow {
+		fill: #fff;
+	}
+
+	svg:not(:has(.bg)) .arrow {
+		fill: #1e1e1e;
+	}
+
+	// The text style: its word, as wide as it needs, white on dark like the
+	// icons.
+	&:has(.gs-arrow-text) {
+		width: auto;
+		height: auto;
+		font-size: 12px;
+		line-height: 1.4;
+	}
+
+	.gs-arrow-text {
+		padding: 1px 6px;
+		border-radius: 2px;
+		background: #1e1e1e;
+		color: #fff;
+	}
+}
+
+.gutenslider-show-on__buttons {
+	display: flex;
+	gap: 6px;
+
+	.components-button {
+		flex: 1;
+		justify-content: center;
+		box-shadow: inset 0 0 0 1px #ddd;
+
+		&.is-pressed {
+			box-shadow: inset 0 0 0 2px var(--wp-admin-theme-color, #3858e9);
+			background: rgba(56, 88, 233, 0.06);
+			color: #1e1e1e;
+		}
+	}
+}
+
+.gutenslider-divider-preview {
+	display: block;
+	width: 100%;
+	height: 26px;
+	color: #1e1e1e;
+
+	svg {
+		width: 100%;
+		height: 100%;
+		fill: currentcolor;
+	}
+}
+
+.gutenslider-divider-none {
+	font-size: 11px;
+	color: #757575;
+}
+
+.gutenslider-divider-settings + .gutenslider-divider-settings {
+	margin-top: 16px;
+	padding-top: 16px;
+	border-top: 1px solid #e0e0e0;
+}
+
+.gutenslider-focal-point {
+	margin-bottom: 16px;
+}
+
+.gutenslider-media-button {
+	margin-bottom: 16px;
+
+	&__preview.components-button {
+		display: block;
+		width: 100%;
+		height: auto;
+		padding: 0;
+		border-radius: 4px;
+		overflow: hidden;
+
+		img,
+		video {
+			display: block;
+			width: 100%;
+			max-height: 160px;
+			object-fit: cover;
+		}
+	}
+
+	&__actions {
+		display: flex;
+		gap: 8px;
+		margin-top: 8px;
+	}
+
+	&__add.components-button {
+		width: 100%;
+		justify-content: center;
+	}
+}
+
+.gutenslider-code {
+	display: block;
+	overflow-wrap: anywhere;
+}
+
+// Video links: link + Load in one row; the dialog's query settings and
+// buttons.
+.gutenslider-video-link {
+	display: flex;
+	gap: 8px;
+	align-items: flex-end;
+
+	.components-base-control {
+		flex: 1;
+	}
+}
+
+.gutenslider-video-help {
+	margin: 8px 0 16px;
+	color: #757575;
+	font-size: 12px;
+}
+
+.gutenslider-video-title {
+	margin: 0 0 16px;
+	overflow-wrap: anywhere;
+}
+
+.gutenslider-video-query {
+	display: grid;
+	gap: 16px;
+	margin: 16px 0 0;
+	padding: 16px;
+	border: 1px solid #ddd;
+	border-radius: 2px;
+
+	legend {
+		padding: 0 4px;
+		font-weight: 500;
+	}
+}
+
+.gutenslider-video-actions {
+	display: flex;
+	justify-content: flex-end;
+	gap: 8px;
+	margin-top: 16px;
+}

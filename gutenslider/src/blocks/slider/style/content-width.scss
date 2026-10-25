@@ -1,0 +1,25 @@
+// Content width "Wide" or "Content": the blocks line up with the theme's
+// wide or content width (and its side padding), the background stays full
+// width. The box keeps its size, so the position settings work as before;
+// only its side padding grows. Percent padding is of the slide's width.
+.wp-block-eedee-block-gutenslider {
+
+	&.gs-content-width-wide {
+		--gs-content-w: var(--wp--style--global--wide-size, 1200px);
+	}
+
+	&.gs-content-width-content {
+		--gs-content-w: var(--wp--style--global--content-size, 800px);
+	}
+
+	&:is(.gs-content-width-wide, .gs-content-width-content) {
+
+		&.content-change .slide-content {
+			padding-inline: max(var(--gs-arrow-clear, var(--gs-gap-horizontal, 0px)), var(--wp--style--root--padding-left, 0px), calc((100% - var(--gs-content-w)) / 2));
+		}
+
+		&.content-fixed .wp-block-eedee-gutenslider__content {
+			padding-inline: max(var(--gutenslider-padding-x, 0px), var(--wp--style--root--padding-left, 0px), calc((100% - var(--gs-content-w)) / 2));
+		}
+	}
+}

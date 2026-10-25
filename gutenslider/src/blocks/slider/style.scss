@@ -1,0 +1,30 @@
+// Front-end styles of the slider: Swiper's core and effect CSS, then the
+// Gutenslider look (the 6.x partials, same class names), then the 7.0
+// layout layer that works before JavaScript.
+
+@import "swiper/css";
+@import "swiper/css/a11y";
+@import "swiper/css/effect-fade";
+@import "swiper/css/effect-flip";
+@import "swiper/css/pagination";
+@import "./style/variables";
+@import "./style/bands";
+@import "./style/align";
+@import "./style/base";
+@import "./style/full";
+@import "./style/responsive";
+@import "./style/slides-number";
+@import "./style/effects";
+@import "./style/navigation-default";
+@import "./style/navigation";
+@import "./style/pagination";
+@import "./style/dots";
+@import "./style/dividers";
+@import "./style/content-fixed";
+@import "./style/content-change";
+@import "./style/adaptive-height";
+@import "./style/slides-auto";
+@import "./style/embeds";
+@import "./style/content-placement";
+@import "./style/content-width";
+@import "./style/layout";

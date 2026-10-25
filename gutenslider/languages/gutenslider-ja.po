@@ -1,0 +1,1455 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Gutenslider 7.0.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/gutenslider\n"
+"Last-Translator: eedee\n"
+"Language-Team: Japanese\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2026-09-29T21:10:59+00:00\n"
+"PO-Revision-Date: 2026-09-28 10:24+0200\n"
+"Language: ja\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Domain: gutenslider\n"
+
+#. Plugin Name of the plugin
+#: eedee-gutenslider.php
+msgid "Gutenslider — Slider Block for the Block Editor"
+msgstr "Gutenslider — ブロックエディター用スライダーブロック"
+
+#. Plugin URI of the plugin
+#: eedee-gutenslider.php
+msgid "https://gutenslider.org"
+msgstr "https://gutenslider.org"
+
+#. Description of the plugin
+#: eedee-gutenslider.php
+msgid "A slider block for images, videos and any blocks on top: carousels, hero sliders and fullscreen background sliders, with responsive settings."
+msgstr "画像、動画、その上に任意のブロックを置けるスライダーブロック。カルーセル、ヒーロースライダー、全画面背景スライダーに対応し、デバイスごとに設定できます。"
+
+#. Author of the plugin
+#: eedee-gutenslider.php
+msgid "eedee"
+msgstr "eedee"
+
+#. Author URI of the plugin
+#: eedee-gutenslider.php
+msgid "https://eedee.net"
+msgstr "https://eedee.net"
+
+#. translators: %s: video title
+#: includes/class-embed.php:105
+#: build/blocks/slider/index.js:7
+#, php-format,js-format
+msgid "Play video: %s"
+msgstr "動画を再生: %s"
+
+#. translators: %s: video title
+#: includes/class-embed.php:105
+#: build/blocks/slider/index.js:7
+msgid "Play video"
+msgstr "動画を再生"
+
+#: includes/class-plugin.php:98
+msgid "Sliders"
+msgstr "スライダー"
+
+#: includes/class-plugin.php:137
+msgid "Documentation"
+msgstr "ドキュメント"
+
+#: includes/class-render.php:353
+msgid "carousel"
+msgstr "カルーセル"
+
+#: includes/class-render.php:354
+#: build/blocks/slider/index.js:6
+msgid "Slider"
+msgstr "スライダー"
+
+#: includes/class-render.php:388
+#: build/blocks/slider/index.js:8
+msgid "Previous slide"
+msgstr "前のスライド"
+
+#: includes/class-render.php:390
+#: build/blocks/slider/index.js:8
+msgid "Next slide"
+msgstr "次のスライド"
+
+#: includes/class-render.php:890
+msgid "Open link"
+msgstr "リンクを開く"
+
+#: includes/class-render.php:900
+msgid "Open image"
+msgstr "画像を開く"
+
+#: includes/class-render.php:913
+msgctxt "ARIA role description"
+msgid "slide"
+msgstr "スライド"
+
+#: includes/class-render.php:1050
+msgid "Image viewer"
+msgstr "画像ビューアー"
+
+#: includes/class-render.php:1051
+msgid "Close"
+msgstr "閉じる"
+
+#: includes/class-render.php:1052
+msgid "Previous image"
+msgstr "前の画像"
+
+#: includes/class-render.php:1053
+msgid "Next image"
+msgstr "次の画像"
+
+#: includes/class-render.php:1054
+msgid "Zoom"
+msgstr "ズーム"
+
+#: includes/class-render.php:1055
+msgid "Zoom out"
+msgstr "縮小"
+
+#. translators: %d: image number in the lightbox
+#: includes/class-render.php:1057
+#, php-format
+msgid "Show image %d"
+msgstr "画像%dを表示"
+
+#. translators: %s: a link
+#: includes/pro/video-sources/class-dailymotion-source.php:109
+#, php-format
+msgid "%s is not a Dailymotion video, user or playlist link."
+msgstr "%s は Dailymotion の動画・ユーザー・プレイリストのリンクではありません。"
+
+#. translators: %s: a link
+#: includes/pro/video-sources/class-dailymotion-source.php:118
+#, php-format
+msgid "The Dailymotion video %s was not found."
+msgstr "Dailymotion の動画 %s が見つかりません。"
+
+#. translators: %s: a link
+#: includes/pro/video-sources/class-dailymotion-source.php:139
+#: includes/pro/video-sources/class-vimeo-source.php:138
+#, php-format
+msgid "No public videos found at %s."
+msgstr "%s に公開動画が見つかりません。"
+
+#. translators: %s: a link
+#: includes/pro/video-sources/class-tiktok-source.php:68
+#, php-format
+msgid "%s: TikTok profiles cannot be read. Paste the links of the videos instead (several at once)."
+msgstr "%s: TikTok のプロフィールは読み込めません。代わりに動画のリンクを貼り付けてください（複数可）。"
+
+#. translators: %s: a link
+#: includes/pro/video-sources/class-tiktok-source.php:77
+#, php-format
+msgid "The TikTok video %s was not found (private, or removed)."
+msgstr "TikTok の動画 %s が見つかりません（非公開または削除済み）。"
+
+#. translators: %s: a link
+#: includes/pro/video-sources/class-vimeo-source.php:117
+#, php-format
+msgid "%s is not a Vimeo video, user, channel or showcase link."
+msgstr "%s は Vimeo の動画・ユーザー・チャンネル・ショーケースのリンクではありません。"
+
+#. translators: %s: a link
+#: includes/pro/video-sources/class-vimeo-source.php:125
+#, php-format
+msgid "The Vimeo video %s cannot be embedded (private, or embedding is off)."
+msgstr "Vimeo の動画 %s は埋め込めません（非公開または埋め込みがオフ）。"
+
+#: includes/pro/video-sources/class-youtube-channel-source.php:39
+msgid "YouTube channel"
+msgstr "YouTube チャンネル"
+
+#. translators: %s: a link
+#: includes/pro/video-sources/class-youtube-channel-source.php:86
+#, php-format
+msgid "No YouTube channel found at %s."
+msgstr "%s に YouTube チャンネルが見つかりません。"
+
+#. translators: %s: a link
+#: includes/pro/video-sources/class-youtube-channel-source.php:103
+#, php-format
+msgid "No videos found on the channel %s."
+msgstr "チャンネル %s に動画が見つかりません。"
+
+#: includes/svg.php:29
+msgid "No Divider"
+msgstr "区切りなし"
+
+#: includes/svg.php:215
+msgid "Text: Previous, Next"
+msgstr "テキスト: 前へ、次へ"
+
+#: includes/svg.php:216
+msgctxt "slider arrow"
+msgid "Previous"
+msgstr "前へ"
+
+#: includes/svg.php:217
+msgctxt "slider arrow"
+msgid "Next"
+msgstr "次へ"
+
+#: includes/video-sources/class-file-source.php:41
+#: build/blocks/slider/index.js:4
+msgid "Video file"
+msgstr "動画ファイル"
+
+#. translators: %s: a link
+#: includes/video-sources/class-file-source.php:90
+#, php-format
+msgid "%s is not a video file."
+msgstr "%s は動画ファイルではありません。"
+
+#: includes/video-sources/class-video-sources.php:67
+msgid "YouTube channels"
+msgstr "YouTube チャンネル"
+
+#. translators: 1: a link, 2: a video platform, e.g. "Vimeo"
+#: includes/video-sources/class-video-sources.php:228
+#, php-format
+msgid "%1$s: %2$s links need Gutenslider Pro."
+msgstr "%1$s: %2$s のリンクには Gutenslider Pro が必要です。"
+
+#. translators: %s: what was pasted
+#: includes/video-sources/class-video-sources.php:230
+#, php-format
+msgid "%s is not a supported video link."
+msgstr "%s は対応している動画リンクではありません。"
+
+#. translators: %s: a link
+#: includes/video-sources/class-youtube-source.php:119
+#, php-format
+msgid "No videos found in the playlist %s (private playlists cannot be read)."
+msgstr "プレイリスト %s に動画が見つかりません (非公開のプレイリストは読み込めません)。"
+
+#: build/blocks/slider/index.js:1
+#: build/blocks/slider/index.js:2
+#: build/pro/editor.js:1
+msgid "Desktop"
+msgstr "デスクトップ"
+
+#: build/blocks/slider/index.js:1
+#: build/blocks/slider/index.js:2
+#: build/pro/editor.js:1
+msgid "Tablet"
+msgstr "タブレット"
+
+#: build/blocks/slider/index.js:1
+#: build/blocks/slider/index.js:2
+#: build/pro/editor.js:1
+msgid "Mobile"
+msgstr "モバイル"
+
+#: build/blocks/slider/index.js:1
+msgid "Device"
+msgstr "デバイス"
+
+#: build/blocks/slider/index.js:1
+msgid "Settings marked with a device apply to the device selected here."
+msgstr "デバイスの印が付いた設定は、ここで選択したデバイスに適用されます。"
+
+#. translators: 1: setting name, 2: device name, like "Tablet"
+#: build/blocks/slider/index.js:2
+#, js-format
+msgid "%1$s (%2$s)"
+msgstr "%1$s (%2$s)"
+
+#: build/blocks/slider/index.js:2
+msgid "None"
+msgstr "なし"
+
+#: build/blocks/slider/index.js:2
+msgid "Caption"
+msgstr "キャプション"
+
+#: build/blocks/slider/index.js:2
+msgid "Title – caption"
+msgstr "タイトル – キャプション"
+
+#: build/blocks/slider/index.js:2
+msgid "Title – caption – description"
+msgstr "タイトル – キャプション – 説明"
+
+#: build/blocks/slider/index.js:2
+msgctxt "slider effect"
+msgid "Slide"
+msgstr "スライド"
+
+#: build/blocks/slider/index.js:2
+msgctxt "slider effect"
+msgid "Fade"
+msgstr "フェード"
+
+#: build/blocks/slider/index.js:2
+msgid "Not with this effect: the blocks stay on top."
+msgstr "このエフェクトでは使えません: ブロックは上に重なります。"
+
+#: build/blocks/slider/index.js:2
+msgid "The image keeps the minimum height; the blocks take the room they need."
+msgstr "画像は最小の高さを保ち、ブロックは必要な分だけ場所を取ります。"
+
+#: build/blocks/slider/index.js:2
+msgid "Slides"
+msgstr "スライド"
+
+#: build/blocks/slider/index.js:2
+msgid "Content"
+msgstr "コンテンツ"
+
+#: build/blocks/slider/index.js:2
+msgid "The same blocks stay on top while the backgrounds change. Add them below the slides."
+msgstr "背景が切り替わっても同じブロックが上に表示されたままになります。スライドの下に追加してください。"
+
+#: build/blocks/slider/index.js:2
+msgid "Each slide has its own blocks."
+msgstr "スライドごとに個別のブロックを持ちます。"
+
+#: build/blocks/slider/index.js:2
+msgid "Per slide"
+msgstr "スライドごと"
+
+#: build/blocks/slider/index.js:2
+msgid "Same on all"
+msgstr "全スライド共通"
+
+#: build/blocks/slider/index.js:2
+msgid "Blocks"
+msgstr "ブロック"
+
+#: build/blocks/slider/index.js:2
+msgctxt "content placement"
+msgid "On top"
+msgstr "画像の上"
+
+#: build/blocks/slider/index.js:2
+msgctxt "content placement"
+msgid "Below"
+msgstr "下"
+
+#: build/blocks/slider/index.js:2
+msgctxt "content placement"
+msgid "Above"
+msgstr "上"
+
+#: build/blocks/slider/index.js:2
+msgid "Content width"
+msgstr "コンテンツ幅"
+
+#: build/blocks/slider/index.js:2
+msgid "The blocks line up with the theme's width; the background stays full width."
+msgstr "ブロックはテーマの幅にそろい、背景は全幅のままです。"
+
+#: build/blocks/slider/index.js:2
+msgctxt "content width"
+msgid "Full"
+msgstr "全幅"
+
+#: build/blocks/slider/index.js:2
+msgctxt "content width"
+msgid "Wide"
+msgstr "ワイド"
+
+#: build/blocks/slider/index.js:2
+msgctxt "content width"
+msgid "Content"
+msgstr "コンテンツ"
+
+#: build/blocks/slider/index.js:2
+msgid "This effect shows one slide at a time."
+msgstr "このエフェクトではスライドを1枚ずつ表示します。"
+
+#: build/blocks/slider/index.js:2
+msgid "Width from content"
+msgstr "コンテンツに合わせた幅"
+
+#: build/blocks/slider/index.js:2
+msgid "Each slide is as wide as its image. Slides without media use their own width setting."
+msgstr "各スライドは画像と同じ幅になります。メディアのないスライドは個別の幅設定を使用します。"
+
+#: build/blocks/slider/index.js:2
+msgid "Slides in view"
+msgstr "表示するスライド数"
+
+#: build/blocks/slider/index.js:2
+msgid "Slides per step"
+msgstr "1回に進むスライド数"
+
+#: build/blocks/slider/index.js:2
+msgid "Space between slides, px"
+msgstr "スライドの間隔 (px)"
+
+#: build/blocks/slider/index.js:2
+msgid "Minimum height"
+msgstr "最小の高さ"
+
+#: build/blocks/slider/index.js:2
+msgid "Grow with the content"
+msgstr "コンテンツに合わせて拡大"
+
+#: build/blocks/slider/index.js:2
+msgid "The slider takes the height of the slide on show."
+msgstr "スライダーは表示中のスライドの高さに合わせます。"
+
+#: build/blocks/slider/index.js:2
+msgid "Full screen height"
+msgstr "全画面の高さ"
+
+#. translators: %s: setting value saved with Gutenslider Pro
+#: build/blocks/slider/index.js:4
+#, js-format
+msgid "%s (Pro)"
+msgstr "%s (Pro)"
+
+#: build/blocks/slider/index.js:4
+msgid "Effect"
+msgstr "エフェクト"
+
+#: build/blocks/slider/index.js:4
+msgid "Motion"
+msgstr "動き"
+
+#: build/blocks/slider/index.js:4
+#: build/blocks/slider/index.js:5
+msgid "Loop"
+msgstr "ループ"
+
+#: build/blocks/slider/index.js:4
+msgid "After the last slide comes the first."
+msgstr "最後のスライドの次に最初のスライドを表示します。"
+
+#: build/blocks/slider/index.js:4
+msgid "Random order"
+msgstr "ランダムな順番"
+
+#: build/blocks/slider/index.js:4
+msgid "A new order on each visit, also on cached pages. The editor keeps the saved order."
+msgstr "訪問ごとに新しい順番になります。キャッシュされたページでも同様です。エディターでは保存した順番のままです。"
+
+#: build/blocks/slider/index.js:4
+msgid "Center the active slide"
+msgstr "アクティブなスライドを中央に配置"
+
+#: build/blocks/slider/index.js:4
+msgid "Autoplay"
+msgstr "自動再生"
+
+#: build/blocks/slider/index.js:4
+msgid "Stops for visitors who prefer reduced motion."
+msgstr "動きを減らす設定の訪問者には停止します。"
+
+#: build/blocks/slider/index.js:4
+msgid "Pause while the pointer is over the slider"
+msgstr "ポインターがスライダー上にある間は一時停止"
+
+#: build/blocks/slider/index.js:4
+msgid "Play videos when their slide shows"
+msgstr "スライドが表示されたら動画を再生"
+
+#: build/blocks/slider/index.js:4
+msgid "For all video slides; a slide can set its own."
+msgstr "すべての動画スライドに適用。スライドごとに個別設定もできます。"
+
+#: build/blocks/slider/index.js:4
+msgid "Arrows"
+msgstr "矢印"
+
+#: build/blocks/slider/index.js:4
+msgid "Show on"
+msgstr "表示するデバイス"
+
+#: build/blocks/slider/index.js:4
+msgid "Style"
+msgstr "スタイル"
+
+#: build/blocks/slider/index.js:4
+msgid "Size in px"
+msgstr "サイズ (px)"
+
+#: build/blocks/slider/index.js:4
+msgid "Pagination"
+msgstr "ページネーション"
+
+#: build/blocks/slider/index.js:4
+msgid "Dividers"
+msgstr "区切り"
+
+#: build/blocks/slider/index.js:4
+msgid "Dividers do not show with this effect."
+msgstr "このエフェクトでは区切りは表示されません。"
+
+#: build/blocks/slider/index.js:4
+#: build/pro/editor.js:1
+msgid "Top"
+msgstr "上"
+
+#: build/blocks/slider/index.js:4
+#: build/pro/editor.js:1
+msgid "Bottom"
+msgstr "下"
+
+#: build/blocks/slider/index.js:4
+msgctxt "divider"
+msgid "None"
+msgstr "なし"
+
+#: build/blocks/slider/index.js:4
+#: build/blocks/slider/index.js:5
+msgid "Color"
+msgstr "色"
+
+#: build/blocks/slider/index.js:4
+msgid "Flip horizontally"
+msgstr "左右反転"
+
+#: build/blocks/slider/index.js:4
+msgid "Lightbox"
+msgstr "ライトボックス"
+
+#: build/blocks/slider/index.js:4
+msgid "Open images and videos in a lightbox"
+msgstr "画像と動画をライトボックスで開く"
+
+#: build/blocks/slider/index.js:4
+msgid "On click: the slide backgrounds, and Image and Video blocks on the slides. Not for slides with a link."
+msgstr "クリックで開く: スライドの背景と、スライド上の画像・動画ブロック。リンク付きのスライドは除きます。"
+
+#: build/blocks/slider/index.js:4
+msgid "Look"
+msgstr "外観"
+
+#: build/blocks/slider/index.js:4
+msgid "Uses the lightbox colors set with Pro."
+msgstr "Pro で設定したライトボックスの色を使用します。"
+
+#: build/blocks/slider/index.js:4
+msgctxt "lightbox look"
+msgid "Light"
+msgstr "ライト"
+
+#: build/blocks/slider/index.js:4
+msgctxt "lightbox look"
+msgid "Dark"
+msgstr "ダーク"
+
+#: build/blocks/slider/index.js:4
+msgid "Slider ID (for custom CSS)"
+msgstr "スライダー ID (カスタム CSS 用)"
+
+#: build/blocks/slider/index.js:4
+msgid "Load the first image right away"
+msgstr "最初の画像をすぐに読み込む"
+
+#: build/blocks/slider/index.js:4
+msgid "For a slider at the top of the page. The first slider on a page does this anyway."
+msgstr "ページ上部にあるスライダー向けです。ページ内の最初のスライダーは常にこの動作になります。"
+
+#: build/blocks/slider/index.js:4
+msgid "Captions from the Media Library"
+msgstr "メディアライブラリのキャプション"
+
+#: build/blocks/slider/index.js:4
+msgid "Adds a paragraph with the image texts to each image slide. You can edit it afterwards."
+msgstr "画像の各スライドに、画像のテキストを含む段落を追加します。後から編集できます。"
+
+#: build/blocks/slider/index.js:4
+msgid "Link images to the file"
+msgstr "画像をファイルにリンク"
+
+#: build/blocks/slider/index.js:4
+msgid "The slider’s lightbox is on and opens the images."
+msgstr "スライダーのライトボックスがオンで、画像を開きます。"
+
+#: build/blocks/slider/index.js:4
+msgid "For lightbox plugins that open linked images. Slides with their own link keep it."
+msgstr "リンクされた画像を開くライトボックスプラグイン向け。独自のリンクがあるスライドはそのままです。"
+
+#: build/blocks/slider/index.js:4
+msgid "Show the slider on"
+msgstr "スライダーを表示するデバイス"
+
+#: build/blocks/slider/index.js:4
+msgid "Arrow keys change slides"
+msgstr "矢印キーでスライドを切り替え"
+
+#: build/blocks/slider/index.js:4
+msgid "While the slider is on screen."
+msgstr "スライダーが画面に表示されている間。"
+
+#: build/blocks/slider/index.js:4
+msgid "Link to each slide"
+msgstr "各スライドへのリンク"
+
+#: build/blocks/slider/index.js:4
+msgid "The page address follows the slide on show (#name), so a shared link opens that slide."
+msgstr "ページのアドレスが表示中のスライドに合わせて変わる (#name) ため、共有したリンクでそのスライドが開きます。"
+
+#: build/blocks/slider/index.js:4
+msgid "Link prefix"
+msgstr "リンクの接頭辞"
+
+#: build/blocks/slider/index.js:4
+msgid "Slides without a link name of their own get #prefix-1, #prefix-2…"
+msgstr "独自のリンク名がないスライドには #prefix-1、#prefix-2… が付きます"
+
+#: build/blocks/slider/index.js:4
+msgid "Arrow colors"
+msgstr "矢印の色"
+
+#: build/blocks/slider/index.js:4
+msgid "Arrow"
+msgstr "矢印"
+
+#: build/blocks/slider/index.js:4
+#: build/blocks/slider/index.js:5
+#: build/pro/editor.js:1
+msgid "Background"
+msgstr "背景"
+
+#: build/blocks/slider/index.js:4
+msgid "Arrow on hover"
+msgstr "ホバー時の矢印"
+
+#: build/blocks/slider/index.js:4
+msgid "Background on hover"
+msgstr "ホバー時の背景"
+
+#: build/blocks/slider/index.js:4
+msgid "Pagination color"
+msgstr "ページネーションの色"
+
+#: build/blocks/slider/index.js:4
+msgid "Dots, numbers and bar"
+msgstr "ドット、数字、バー"
+
+#: build/blocks/slider/index.js:4
+msgid "Play when the slide shows"
+msgstr "スライドが表示されたら再生"
+
+#: build/blocks/slider/index.js:4
+msgid "Otherwise a play button. Videos pause when their slide leaves."
+msgstr "オフの場合は再生ボタンを表示。スライドが切り替わると動画は一時停止します。"
+
+#: build/blocks/slider/index.js:4
+msgid "As the slider (on)"
+msgstr "スライダーに従う（オン）"
+
+#: build/blocks/slider/index.js:4
+msgid "As the slider (off)"
+msgstr "スライダーに従う（オフ）"
+
+#: build/blocks/slider/index.js:4
+msgid "On"
+msgstr "オン"
+
+#: build/blocks/slider/index.js:4
+msgid "Off"
+msgstr "オフ"
+
+#: build/blocks/slider/index.js:4
+msgid "No video found."
+msgstr "動画が見つかりません。"
+
+#: build/blocks/slider/index.js:4
+msgid "Video link"
+msgstr "動画のリンク"
+
+#: build/blocks/slider/index.js:4
+msgid "Load"
+msgstr "読み込む"
+
+#: build/blocks/slider/index.js:4
+msgid "YouTube, or a video file (.mp4, .webm); with Gutenslider Pro also Vimeo, Dailymotion and TikTok."
+msgstr "YouTube または動画ファイル（.mp4、.webm）。Gutenslider Pro では Vimeo、Dailymotion、TikTok も使えます。"
+
+#: build/blocks/slider/index.js:4
+#: build/blocks/slider/index.js:5
+msgid "Size"
+msgstr "サイズ"
+
+#: build/blocks/slider/index.js:4
+msgid "Whole video"
+msgstr "動画全体"
+
+#: build/blocks/slider/index.js:4
+msgid "Fill the slide"
+msgstr "スライドを埋める"
+
+#: build/blocks/slider/index.js:4
+#: build/blocks/slider/index.js:5
+msgid "Muted"
+msgstr "ミュート"
+
+#: build/blocks/slider/index.js:4
+#: build/blocks/slider/index.js:5
+msgid "Browsers only start videos with sound after a click."
+msgstr "ブラウザーは音声付きの動画をクリック後にのみ再生します。"
+
+#: build/blocks/slider/index.js:4
+msgid "With the slider’s autoplay, a video plays once and the slider moves on."
+msgstr "スライダーの自動再生中は、動画を一度再生してから次へ進みます。"
+
+#: build/blocks/slider/index.js:4
+msgid "Player controls"
+msgstr "プレーヤーのコントロール"
+
+#: build/blocks/slider/index.js:4
+msgid "Playlists and channels"
+msgstr "プレイリストとチャンネル"
+
+#: build/blocks/slider/index.js:4
+msgid "Videos per link"
+msgstr "リンクごとの動画数"
+
+#: build/blocks/slider/index.js:4
+msgid "The first ones, in the order below."
+msgstr "下の順序で先頭から。"
+
+#: build/blocks/slider/index.js:4
+msgid "Order"
+msgstr "順序"
+
+#: build/blocks/slider/index.js:4
+msgid "As listed (channels: newest first)"
+msgstr "掲載順（チャンネル：新しい順）"
+
+#: build/blocks/slider/index.js:4
+msgid "Reversed (channels: oldest first)"
+msgstr "逆順（チャンネル：古い順）"
+
+#: build/blocks/slider/index.js:4
+msgid "Include YouTube Shorts"
+msgstr "YouTube ショートを含める"
+
+#: build/blocks/slider/index.js:4
+msgid "Shorts play upright (9:16)."
+msgstr "ショートは縦長（9:16）で再生されます。"
+
+#: build/blocks/slider/index.js:4
+#: build/blocks/slider/index.js:5
+msgid "Add videos"
+msgstr "動画を追加"
+
+#: build/blocks/slider/index.js:4
+msgid "Video links"
+msgstr "動画のリンク"
+
+#: build/blocks/slider/index.js:4
+msgid "One per line; each video becomes a slide. YouTube videos and playlists, and links to video files (.mp4, .webm, .mov, .ogv). With Gutenslider Pro also YouTube channels, Vimeo (videos, users, channels, showcases), Dailymotion (videos, users, playlists) and TikTok (video links, several at once). The thumbnails are saved to the Media Library."
+msgstr "1行に1つ。各動画が1枚のスライドになります。YouTube の動画とプレイリスト、動画ファイル（.mp4、.webm、.mov、.ogv）へのリンク。Gutenslider Pro では YouTube チャンネル、Vimeo（動画・ユーザー・チャンネル・ショーケース）、Dailymotion（動画・ユーザー・プレイリスト）、TikTok（動画リンク、複数可）も使えます。サムネイルはメディアライブラリに保存されます。"
+
+#. translators: %s: video platforms, e.g. "Vimeo, TikTok"
+#: build/blocks/slider/index.js:5
+#, js-format
+msgid "%s links need Gutenslider Pro."
+msgstr "%s のリンクには Gutenslider Pro が必要です。"
+
+#: build/blocks/slider/index.js:5
+msgid "Cancel"
+msgstr "キャンセル"
+
+#: build/blocks/slider/index.js:5
+msgid "Reading the links…"
+msgstr "リンクを読み込み中…"
+
+#: build/blocks/slider/index.js:5
+msgctxt "background size"
+msgid "Fill the slide (crop)"
+msgstr "スライドを埋める (切り抜き)"
+
+#: build/blocks/slider/index.js:5
+msgctxt "background size"
+msgid "Show all of it"
+msgstr "全体を表示"
+
+#: build/blocks/slider/index.js:5
+msgctxt "background size"
+msgid "Stretch"
+msgstr "引き伸ばす"
+
+#: build/blocks/slider/index.js:5
+msgctxt "background size"
+msgid "Original size"
+msgstr "元のサイズ"
+
+#: build/blocks/slider/index.js:5
+#: build/blocks/slider/index.js:9
+msgid "Replace"
+msgstr "置換"
+
+#: build/blocks/slider/index.js:5
+msgid "Remove"
+msgstr "削除"
+
+#: build/blocks/slider/index.js:5
+msgid "Overlay"
+msgstr "オーバーレイ"
+
+#: build/blocks/slider/index.js:5
+msgctxt "overlay"
+msgid "None"
+msgstr "なし"
+
+#: build/blocks/slider/index.js:5
+msgid "Gradient"
+msgstr "グラデーション"
+
+#: build/blocks/slider/index.js:5
+msgid "Overlay opacity"
+msgstr "オーバーレイの不透明度"
+
+#: build/blocks/slider/index.js:5
+#: build/pro/editor.js:1
+msgid "Type"
+msgstr "タイプ"
+
+#: build/blocks/slider/index.js:5
+msgid "Image"
+msgstr "画像"
+
+#: build/blocks/slider/index.js:5
+msgid "Video"
+msgstr "動画"
+
+#: build/blocks/slider/index.js:5
+msgctxt "gradient, short"
+msgid "Grad."
+msgstr "グラデ"
+
+#: build/blocks/slider/index.js:5
+msgctxt "background"
+msgid "None"
+msgstr "なし"
+
+#: build/blocks/slider/index.js:5
+msgid "Image and focal point"
+msgstr "画像と焦点"
+
+#: build/blocks/slider/index.js:5
+msgid "Choose image"
+msgstr "画像を選択"
+
+#: build/blocks/slider/index.js:5
+msgid "Video from"
+msgstr "動画の取得元"
+
+#: build/blocks/slider/index.js:5
+msgid "Media Library"
+msgstr "メディアライブラリ"
+
+#: build/blocks/slider/index.js:5
+msgid "Link"
+msgstr "リンク"
+
+#: build/blocks/slider/index.js:5
+msgid "Choose video"
+msgstr "動画を選択"
+
+#: build/blocks/slider/index.js:5
+msgid "Poster image"
+msgstr "ポスター画像"
+
+#: build/blocks/slider/index.js:5
+msgid "Shows while the video loads, and in the lightbox thumbnails."
+msgstr "動画の読み込み中と、ライトボックスのサムネイルに表示されます。"
+
+#: build/blocks/slider/index.js:5
+msgid "Choose poster"
+msgstr "ポスターを選択"
+
+#: build/blocks/slider/index.js:5
+msgid "Pause when the slide is not shown"
+msgstr "スライドが表示されていないときは一時停止"
+
+#: build/blocks/slider/index.js:5
+msgid "Focal point"
+msgstr "焦点"
+
+#: build/blocks/slider/index.js:5
+msgid "Slide width"
+msgstr "スライドの幅"
+
+#: build/blocks/slider/index.js:5
+msgid "Slides without an image or video need a width when the slider sizes slides by their content."
+msgstr "スライダーがコンテンツに合わせてスライドのサイズを決める場合、画像や動画のないスライドには幅の指定が必要です。"
+
+#: build/blocks/slider/index.js:5
+msgid "Slide text…"
+msgstr "スライドのテキスト…"
+
+#. translators: %d: slide number
+#: build/blocks/slider/index.js:6
+#, js-format
+msgid "Show slide %d"
+msgstr "スライド%dを表示"
+
+#: build/blocks/slider/index.js:6
+msgid "Choose images or videos – each becomes a slide – or start with empty slides and add any blocks to them."
+msgstr "画像や動画を選択するとそれぞれがスライドになります。または空のスライドから始めて、任意のブロックを追加できます。"
+
+#: build/blocks/slider/index.js:6
+msgid "Videos from links"
+msgstr "リンクから動画"
+
+#: build/blocks/slider/index.js:6
+msgid "Start with empty slides"
+msgstr "空のスライドから始める"
+
+#. translators: %d: number of videos
+#: build/blocks/slider/index.js:8
+#, js-format
+msgid "%d video added."
+msgid_plural "%d videos added."
+msgstr[0] "%d 本の動画を追加しました。"
+
+#: build/blocks/slider/index.js:8
+msgid "Content position of all slides"
+msgstr "全スライドのコンテンツ位置"
+
+#: build/blocks/slider/index.js:8
+msgid "Edit the slides"
+msgstr "スライドを編集"
+
+#: build/blocks/slider/index.js:8
+msgid "Edit"
+msgstr "編集"
+
+#: build/blocks/slider/index.js:8
+msgid "Preview: the slider as visitors see it, with its effect and autoplay"
+msgstr "プレビュー: 訪問者に表示されるスライダーを、エフェクトと自動再生付きで確認"
+
+#: build/blocks/slider/index.js:8
+msgid "Preview"
+msgstr "プレビュー"
+
+#: build/blocks/slider/index.js:8
+msgid "Add slides from the Media Library"
+msgstr "メディアライブラリからスライドを追加"
+
+#: build/blocks/slider/index.js:8
+msgid "Add videos from links"
+msgstr "リンクから動画を追加"
+
+#: build/blocks/slider/index.js:8
+msgid "Add an empty slide"
+msgstr "空のスライドを追加"
+
+#. translators: 1: current slide number, 2: number of slides
+#: build/blocks/slider/index.js:9
+#, js-format
+msgid "Slide %1$d of %2$d"
+msgid_plural "Slide %1$d of %2$d"
+msgstr[0] "スライド %1$d / %2$d"
+
+#: build/blocks/slider/index.js:9
+msgid "Slide"
+msgstr "スライド"
+
+#: build/blocks/slider/index.js:9
+msgid "Add content on top"
+msgstr "上にコンテンツを追加"
+
+#: build/blocks/slider/index.js:9
+msgid "Some blocks here only show with \"Same on all\" content."
+msgstr "ここにある一部のブロックは、コンテンツが「全スライド共通」の場合にのみ表示されます。"
+
+#: build/blocks/slider/index.js:9
+msgid "Slides with any blocks on top"
+msgstr "任意のブロックを重ねたスライド"
+
+#: build/blocks/slider/index.js:9
+msgid "Images and videos"
+msgstr "画像と動画"
+
+#: build/blocks/slider/index.js:9
+msgid "Content position"
+msgstr "コンテンツの位置"
+
+#: build/blocks/slider/index.js:9
+msgid "Link the slide"
+msgstr "スライドにリンク"
+
+#: build/blocks/slider/index.js:9
+msgid "Add media"
+msgstr "メディアを追加"
+
+#: build/blocks/slider/index.js:9
+msgid "Hide this slide"
+msgstr "このスライドを非表示"
+
+#: build/blocks/slider/index.js:9
+msgid "Hidden slides stay in the editor, but visitors do not see them."
+msgstr "非表示のスライドはエディターには残りますが、訪問者には表示されません。"
+
+#: build/blocks/slider/index.js:9
+msgid "Slide link name"
+msgstr "スライドのリンク名"
+
+#: build/blocks/slider/index.js:9
+msgid "With hash navigation on (slider settings), the address ends in #this-name while the slide shows. Empty: numbered."
+msgstr "ハッシュナビゲーションが有効な場合 (スライダー設定)、スライドの表示中はアドレスの末尾が #this-name になります。空欄の場合は番号が付きます。"
+
+#: build/blocks/slider/index.js:9
+msgid "Hidden"
+msgstr "非表示"
+
+#: build/blocks/slider/index.js:9
+msgid "Linked"
+msgstr "リンクあり"
+
+#: build/pro/editor.js:1
+msgctxt "blend mode"
+msgid "Normal"
+msgstr "通常"
+
+#: build/pro/editor.js:1
+msgid "Color burn"
+msgstr "焼き込みカラー"
+
+#: build/pro/editor.js:1
+msgid "Color dodge"
+msgstr "覆い焼きカラー"
+
+#: build/pro/editor.js:1
+msgid "Difference"
+msgstr "差の絶対値"
+
+#: build/pro/editor.js:1
+msgid "Exclusion"
+msgstr "除外"
+
+#: build/pro/editor.js:1
+msgid "Saturation"
+msgstr "彩度"
+
+#: build/pro/editor.js:1
+msgid "Slides change shape as they move."
+msgstr "スライドが動きながら形を変えます。"
+
+#: build/pro/editor.js:1
+msgid "Drawn with WebGL, one slide at a time. Without WebGL or with reduced motion, the slides crossfade."
+msgstr "WebGL で1枚ずつ描画します。WebGL が使えない場合や動きを減らす設定では、スライドはクロスフェードします。"
+
+#: build/pro/editor.js:1
+msgid "3D"
+msgstr "3D"
+
+#: build/pro/editor.js:1
+msgctxt "slider effect"
+msgid "Coverflow"
+msgstr "カバーフロー"
+
+#: build/pro/editor.js:1
+msgctxt "slider effect"
+msgid "Cards"
+msgstr "カード"
+
+#: build/pro/editor.js:1
+msgctxt "slider effect"
+msgid "Cube"
+msgstr "キューブ"
+
+#: build/pro/editor.js:1
+msgctxt "slider effect"
+msgid "Flip"
+msgstr "フリップ"
+
+#: build/pro/editor.js:1
+msgid "Shaped"
+msgstr "シェイプ"
+
+#: build/pro/editor.js:1
+msgctxt "slider effect"
+msgid "Morph"
+msgstr "モーフ"
+
+#: build/pro/editor.js:1
+msgctxt "slider effect"
+msgid "Parallax"
+msgstr "パララックス"
+
+#: build/pro/editor.js:1
+msgctxt "slider effect"
+msgid "Tilt"
+msgstr "チルト"
+
+#: build/pro/editor.js:1
+msgctxt "slider effect"
+msgid "Fan"
+msgstr "ファン"
+
+#: build/pro/editor.js:1
+msgctxt "slider effect"
+msgid "Stack"
+msgstr "スタック"
+
+#: build/pro/editor.js:1
+msgctxt "slider effect"
+msgid "Reveal"
+msgstr "リビール"
+
+#: build/pro/editor.js:1
+msgid "WebGL transitions"
+msgstr "WebGL トランジション"
+
+#: build/pro/editor.js:1
+msgctxt "slider effect"
+msgid "Liquid"
+msgstr "リキッド"
+
+#: build/pro/editor.js:1
+msgctxt "slider effect"
+msgid "Displace"
+msgstr "ディスプレイス"
+
+#: build/pro/editor.js:1
+msgctxt "slider effect"
+msgid "Ripple"
+msgstr "波紋"
+
+#: build/pro/editor.js:1
+msgctxt "slider effect"
+msgid "Warp"
+msgstr "ワープ"
+
+#: build/pro/editor.js:1
+msgctxt "slider effect"
+msgid "Swirl"
+msgstr "渦巻き"
+
+#: build/pro/editor.js:1
+msgctxt "slider effect"
+msgid "Kaleidoscope"
+msgstr "万華鏡"
+
+#: build/pro/editor.js:1
+msgctxt "slider effect"
+msgid "Lens"
+msgstr "レンズ"
+
+#: build/pro/editor.js:1
+msgctxt "slider effect"
+msgid "Fluted glass"
+msgstr "リブガラス"
+
+#: build/pro/editor.js:1
+msgctxt "slider effect"
+msgid "Zoom"
+msgstr "ズーム"
+
+#: build/pro/editor.js:1
+msgctxt "slider effect"
+msgid "Push"
+msgstr "プッシュ"
+
+#: build/pro/editor.js:1
+msgctxt "slider effect"
+msgid "Fold"
+msgstr "折りたたみ"
+
+#: build/pro/editor.js:1
+msgctxt "slider effect"
+msgid "Wind"
+msgstr "風"
+
+#: build/pro/editor.js:1
+msgctxt "slider effect"
+msgid "Burn"
+msgstr "バーン"
+
+#: build/pro/editor.js:1
+msgctxt "slider effect"
+msgid "Pixelate"
+msgstr "ピクセル化"
+
+#: build/pro/editor.js:1
+msgctxt "slider effect"
+msgid "Mosaic"
+msgstr "モザイク"
+
+#: build/pro/editor.js:1
+msgctxt "slider effect"
+msgid "Blocks"
+msgstr "ブロック"
+
+#: build/pro/editor.js:1
+msgctxt "slider effect"
+msgid "Glitch"
+msgstr "グリッチ"
+
+#: build/pro/editor.js:1
+msgctxt "slider effect"
+msgid "Signal"
+msgstr "シグナル"
+
+#: build/pro/editor.js:1
+msgctxt "slider effect"
+msgid "Datamosh"
+msgstr "データモッシュ"
+
+#: build/pro/editor.js:1
+msgctxt "slider effect"
+msgid "Chroma"
+msgstr "クロマ"
+
+#: build/pro/editor.js:1
+msgid "Transition time (s)"
+msgstr "切り替え時間 (秒)"
+
+#: build/pro/editor.js:1
+msgid "Time per slide (s)"
+msgstr "スライドごとの表示時間 (秒)"
+
+#: build/pro/editor.js:1
+msgid "Parallax"
+msgstr "パララックス"
+
+#: build/pro/editor.js:1
+msgid "The backgrounds move slower than the page while it scrolls."
+msgstr "スクロール時に背景がページより遅く動きます。"
+
+#: build/pro/editor.js:1
+msgid "Parallax direction"
+msgstr "パララックスの方向"
+
+#: build/pro/editor.js:1
+msgid "Up"
+msgstr "上"
+
+#: build/pro/editor.js:1
+msgid "Down"
+msgstr "下"
+
+#: build/pro/editor.js:1
+msgid "Left"
+msgstr "左"
+
+#: build/pro/editor.js:1
+msgid "Right"
+msgstr "右"
+
+#: build/pro/editor.js:1
+msgid "Parallax strength"
+msgstr "パララックスの強さ"
+
+#: build/pro/editor.js:1
+msgid "Position"
+msgstr "位置"
+
+#: build/pro/editor.js:1
+msgid "Left and right"
+msgstr "左右"
+
+#: build/pro/editor.js:1
+msgid "Next to the blocks"
+msgstr "ブロックの横"
+
+#: build/pro/editor.js:1
+msgid "Top and bottom"
+msgstr "上下"
+
+#: build/pro/editor.js:1
+msgid "Bottom right"
+msgstr "右下"
+
+#: build/pro/editor.js:1
+msgid "Bottom left"
+msgstr "左下"
+
+#: build/pro/editor.js:1
+msgid "Top right"
+msgstr "右上"
+
+#: build/pro/editor.js:1
+msgid "Top left"
+msgstr "左上"
+
+#: build/pro/editor.js:1
+msgid "Follow the pointer"
+msgstr "ポインターに追従"
+
+#: build/pro/editor.js:1
+msgid "Move sideways, px"
+msgstr "横に移動 (px)"
+
+#: build/pro/editor.js:1
+msgid "Move up or down, px"
+msgstr "上下に移動 (px)"
+
+#: build/pro/editor.js:1
+msgid "Space between the arrows, px"
+msgstr "矢印の間隔 (px)"
+
+#: build/pro/editor.js:1
+msgid "Blend with the slide"
+msgstr "スライドとブレンド"
+
+#: build/pro/editor.js:1
+msgid "Dots"
+msgstr "ドット"
+
+#: build/pro/editor.js:1
+msgid "Pill: the active dot stretches and slides along"
+msgstr "ピル: アクティブなドットが伸びながら移動"
+
+#: build/pro/editor.js:1
+msgid "Lines with progress"
+msgstr "進行状況付きライン"
+
+#: build/pro/editor.js:1
+msgid "Dots, a few at a time"
+msgstr "ドット (数個ずつ表示)"
+
+#: build/pro/editor.js:1
+msgid "Numbers (2 / 5)"
+msgstr "数字 (2 / 5)"
+
+#: build/pro/editor.js:1
+msgid "Progress bar"
+msgstr "プログレスバー"
+
+#: build/pro/editor.js:1
+msgid "Dot style"
+msgstr "ドットのスタイル"
+
+#: build/pro/editor.js:1
+msgid "Height in px"
+msgstr "高さ (px)"
+
+#: build/pro/editor.js:1
+msgid "Invert the shape"
+msgstr "形を反転"
+
+#: build/pro/editor.js:1
+msgid "Nothing"
+msgstr "なし"
+
+#: build/pro/editor.js:1
+msgid "Image title"
+msgstr "画像のタイトル"
+
+#: build/pro/editor.js:1
+msgid "Image caption"
+msgstr "画像のキャプション"
+
+#: build/pro/editor.js:1
+msgid "Image description"
+msgstr "画像の説明"
+
+#: build/pro/editor.js:1
+msgid "Alternative text"
+msgstr "代替テキスト"
+
+#: build/pro/editor.js:1
+msgid "Blending"
+msgstr "ブレンド"
+
+#: build/pro/editor.js:1
+msgid "Content blend mode"
+msgstr "コンテンツの描画モード"
+
+#: build/pro/editor.js:1
+msgid "How the blocks on the slides mix with the backgrounds."
+msgstr "スライド上のブロックと背景の混ざり方。"
+
+#: build/pro/editor.js:1
+msgid "Content opacity"
+msgstr "コンテンツの不透明度"
+
+#: build/pro/editor.js:1
+msgid "Opening"
+msgstr "開き方"
+
+#: build/pro/editor.js:1
+msgctxt "lightbox opening"
+msgid "Grow"
+msgstr "拡大"
+
+#: build/pro/editor.js:1
+msgid "Fade"
+msgstr "フェード"
+
+#: build/pro/editor.js:1
+msgid "Heading"
+msgstr "見出し"
+
+#: build/pro/editor.js:1
+msgid "Text"
+msgstr "テキスト"
+
+#: build/pro/editor.js:1
+msgid "Counter (3 / 12)"
+msgstr "カウンター (3 / 12)"
+
+#: build/pro/editor.js:1
+msgid "Thumbnails"
+msgstr "サムネイル"
+
+#: build/pro/editor.js:1
+msgid "Zoom button"
+msgstr "ズームボタン"
+
+#: build/pro/editor.js:1
+msgid "Zoom cursor over the slides"
+msgstr "スライド上でズームカーソルを表示"
+
+#: build/pro/editor.js:1
+msgid "Lightbox colors"
+msgstr "ライトボックスの色"
+
+#: build/pro/editor.js:1
+msgid "Text and buttons"
+msgstr "テキストとボタン"
+
+#: build/blocks/slide/block.json
+msgctxt "block title"
+msgid "Slide"
+msgstr "スライド"
+
+#: build/blocks/slide/block.json
+msgctxt "block description"
+msgid "A single slide of a Gutenslider."
+msgstr "Gutenslider の1枚のスライド。"
+
+#: build/blocks/slider/block.json
+msgctxt "block title"
+msgid "Gutenslider"
+msgstr "Gutenslider"
+
+#: build/blocks/slider/block.json
+msgctxt "block description"
+msgid "A slider for images, videos and any blocks on top."
+msgstr "画像、動画、その上に重ねる任意のブロックのためのスライダー。"
+
+#: build/blocks/slider/block.json
+msgctxt "block keyword"
+msgid "slider"
+msgstr "スライダー"
+
+#: build/blocks/slider/block.json
+msgctxt "block keyword"
+msgid "carousel"
+msgstr "カルーセル"
+
+#: build/blocks/slider/block.json
+msgctxt "block keyword"
+msgid "slideshow"
+msgstr "スライドショー"
+
+#: build/blocks/slider/block.json
+msgctxt "block keyword"
+msgid "gallery"
+msgstr "ギャラリー"
+
+#: build/blocks/slider/block.json
+msgctxt "block keyword"
+msgid "hero"
+msgstr "ヒーロー"

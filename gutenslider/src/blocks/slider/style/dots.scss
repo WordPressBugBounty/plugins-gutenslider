@@ -1,0 +1,39 @@
+// A comfortable touch target around every dot (WCAG 2.2 target size: 24px
+// between centers) without spacing the dots out.
+.wp-block-eedee-block-gutenslider .swiper-pagination-clickable .swiper-pagination-bullet {
+	position: relative;
+
+	&::before {
+		content: "";
+		position: absolute;
+		inset: -7px -4px;
+	}
+}
+
+// Dots at a side with the arrows at the sides: both sit in the middle, so
+// the dots move in past the arrow. (The arrow variables live on
+// .eedee-swiper-outer: set on the pagination, below it.) Arrows next to the
+// content are at the sides of the slide, unless the blocks are below or
+// above the image.
+.wp-block-eedee-block-gutenslider:is(.arrow-position-sides, .arrow-position-content:not(.gs-content-below, .gs-content-above)) {
+
+	.eedee-gutenslider-pagination {
+		--gs-dots-clear: calc(var(--gutenslider-arrow-x-offset-sm) + var(--gutenslider-arrow-size-sm) + 6px);
+
+		@media only screen and (min-width: 601px) and (max-width: 960px) {
+			--gs-dots-clear: calc(var(--gutenslider-arrow-x-offset-md) + var(--gutenslider-arrow-size-md) + 6px);
+		}
+
+		@media only screen and (min-width: 961px) {
+			--gs-dots-clear: calc(var(--gutenslider-arrow-x-offset) + var(--gutenslider-arrow-size) + 6px);
+		}
+	}
+
+	&.dot-position-right .swiper-pagination-bullets.eedee-gutenslider-pagination {
+		margin-right: var(--gs-dots-clear);
+	}
+
+	&.dot-position-left .swiper-pagination-bullets.eedee-gutenslider-pagination {
+		margin-left: var(--gs-dots-clear);
+	}
+}

@@ -1,0 +1,34 @@
+.wp-block-eedee-block-gutenslider.content-fixed {
+
+	&.mb-none {
+		// .slide-content,
+		.wp-block-eedee-gutenslider__content {
+			mix-blend-mode: normal;
+		}
+	}
+
+	&.mb-lighten {
+		// .slide-content,
+		.wp-block-eedee-gutenslider__content {
+			mix-blend-mode: lighten;
+		}
+	}
+
+	&.mb-darken {
+		// .slide-content,
+		.wp-block-eedee-gutenslider__content {
+			mix-blend-mode: darken;
+		}
+	}
+
+	&.mb-difference {
+		// .slide-content,
+		.wp-block-eedee-gutenslider__content {
+			mix-blend-mode: difference;
+		}
+	}
+}
+
+.swiper-flip {
+	overflow: visible !important;
+}

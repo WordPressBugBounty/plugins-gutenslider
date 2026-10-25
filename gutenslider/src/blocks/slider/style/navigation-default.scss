@@ -1,0 +1,35 @@
+// slider navigation
+@import "./variables";
+
+.wp-block-eedee-block-gutenslider {
+
+	&.arrows-sm .eedee-gutenslider-nav {
+		display: block;
+	}
+
+	&.arrows-sm-none .eedee-gutenslider-nav {
+		display: none;
+	}
+
+	@include break-small() {
+
+		&.arrows-md .eedee-gutenslider-nav {
+			display: block;
+		}
+
+		&.arrows-md-none .eedee-gutenslider-nav {
+			display: none;
+		}
+	}
+
+	@include break-large() {
+
+		&.arrows-lg .eedee-gutenslider-nav {
+			display: block;
+		}
+
+		&.arrows-lg-none .eedee-gutenslider-nav {
+			display: none;
+		}
+	}
+}

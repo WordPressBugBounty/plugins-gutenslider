@@ -1,1 +1,0 @@
-import './gutenslider/editor.scss'

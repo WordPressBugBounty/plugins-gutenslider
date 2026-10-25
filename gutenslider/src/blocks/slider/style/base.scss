@@ -1,0 +1,174 @@
+.wp-block-eedee-block-gutenslider {
+	position: relative;
+
+	.eedee-swiper-outer {
+		// height: 100%;s
+		position: relative;
+		display: grid;
+		grid-template-columns: minmax(0, 1fr);
+		margin-top: var(--gutenslider-margin-y);
+		margin-bottom: var(--gutenslider-margin-y);
+		margin-left: var(--gutenslider-margin-x);
+		margin-right: var(--gutenslider-margin-x);
+	}
+
+	.eedee-background-div.no-media-background,
+	.swiper-slide.bg-none,
+	.swiper-slide.bg-gradient,
+	.swiper-slide.bg-color {
+
+		.eedee-background-div__overlay {
+			min-height: var(--gutenslider-min-height);
+		}
+	}
+
+	.swiper {
+		width: 100%;
+		height: 100%;
+		align-content: stretch;
+	}
+
+	.swiper-wrapper {
+		width: 100%;
+		min-height: var(--gutenslider-min-height);
+		overflow: visible;
+	}
+
+	.swiper-zoom-container {
+		height: 100%;
+	}
+
+	.swiper-slide .swiper-zoom-container > div {
+		width: 100%;
+		height: 100%;
+	}
+
+	.wp-block-eedee-block-gutenslide {
+		display: grid;
+
+		//a hack for 5.0 migration
+		.wp-block-eedee-block-gutenslide {
+			display: none;
+		}
+
+		.eedee-background-div {
+			height: 100%;
+
+			/* todo is this needed ? */
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+
+			/* end todo is this needed ? */
+			overflow-x: hidden;
+			overflow-y: hidden;
+			grid-area: 1/1;
+
+			/* todo maybe also grid-area ? */
+			.eedee-background-div__overlay {
+				position: absolute;
+				top: 0;
+				left: 0;
+				right: 0;
+				bottom: 0;
+			}
+
+			video,
+			img {
+				object-fit: cover;
+				width: 100%;
+				height: 100%;
+				display: block;
+				user-select: none;
+			}
+		}
+
+		.slide-content {
+			display: flex;
+			position: relative;
+			overflow-x: hidden;
+			flex-direction: column;
+			grid-area: 1/1;
+			overflow-wrap: break-word;
+
+			// to center content perfectly  ...
+			// ... remove top margin from first element ...
+			> :first-child {
+				margin-top: 0;
+			}
+
+			// ... remove bottom margin from last element
+			> :last-child {
+				margin-bottom: 0;
+			}
+
+			> * {
+				max-width: 100%;
+			}
+		}
+
+		.slide-link {
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+		}
+
+		&.embed-background {
+
+			.eedee-background-div {
+
+				.eedee-background-div__overlay {
+					display: none;
+				}
+
+				.wp-block-embed__wrapper {
+					height: 100%;
+					width: 100%;
+				}
+
+				&.wp-has-aspect-ratio {
+
+					&.wp-embed-aspect-16-9 {
+						width: calc(var(--gutenslider-min-height) * (16 / 9));
+					}
+
+					&.wp-embed-aspect-21-9 {
+						width: calc(var(--gutenslider-min-height) * (21 / 9));
+					}
+
+					&.wp-embed-aspect-18-9 {
+						width: calc(var(--gutenslider-min-height) * (18 / 9));
+					}
+
+					&.wp-embed-aspect-4-3 {
+						width: calc(var(--gutenslider-min-height) * (4 / 3));
+					}
+					// Vertical video and instagram square video support.
+					&.wp-embed-aspect-1-1 {
+						width: calc(var(--gutenslider-min-height));
+					}
+
+					&.wp-embed-aspect-9-16 {
+						width: calc(var(--gutenslider-min-height) * (9 / 16));
+					}
+
+					&.wp-embed-aspect-1-2 {
+						width: calc(var(--gutenslider-min-height) * (1 / 2));
+					}
+				}
+			}
+
+			.slide-content {
+				display: none;
+			}
+		}
+	}
+
+	// .simple-parallax-initialized img {
+	// 	height: auto !important;
+	// }
+}

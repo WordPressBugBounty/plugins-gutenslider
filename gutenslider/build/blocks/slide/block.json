@@ -1,0 +1,121 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "eedee/block-gutenslide",
+  "version": "7.2.2",
+  "title": "Slide",
+  "category": "media",
+  "icon": "format-image",
+  "description": "A single slide of a Gutenslider.",
+  "parent": [
+    "eedee/block-gutenslider"
+  ],
+  "textdomain": "gutenslider",
+  "attributes": {
+    "gsBlockId": {
+      "type": "string"
+    },
+    "background": {
+      "type": "object",
+      "default": {}
+    },
+    "isEditable": {
+      "type": "boolean",
+      "default": true
+    },
+    "mediaUrl": {
+      "type": "string",
+      "source": "attribute",
+      "selector": ".slide-bg img, .slide-bg video",
+      "attribute": "src"
+    },
+    "mediaAlt": {
+      "type": "string",
+      "source": "attribute",
+      "selector": ".slide-bg img",
+      "attribute": "alt",
+      "default": ""
+    },
+    "mediaType": {
+      "type": "string"
+    },
+    "mediaId": {
+      "type": "number"
+    },
+    "overlayColor": {
+      "type": "string",
+      "default": ""
+    },
+    "dimRatio": {
+      "type": "number",
+      "default": 0.5
+    },
+    "rgbaBackground": {
+      "type": "string",
+      "default": ""
+    },
+    "initialized": {
+      "type": "boolean",
+      "default": false
+    },
+    "linkUrl": {
+      "type": "string",
+      "default": ""
+    },
+    "verticalAlign": {
+      "type": "string",
+      "default": "center"
+    },
+    "contentPosition": {
+      "type": "string",
+      "default": "center"
+    },
+    "autoCaption": {
+      "type": "string",
+      "default": "none"
+    },
+    "minWidth": {
+      "type": "string",
+      "default": "80%"
+    },
+    "mixBlendMode": {
+      "type": "string",
+      "default": "none"
+    },
+    "opensInNewTab": {
+      "type": "boolean",
+      "default": false
+    },
+    "hashId": {
+      "type": "string",
+      "default": ""
+    },
+    "isHidden": {
+      "type": "boolean",
+      "default": false
+    },
+    "fetchPriority": {
+      "type": "boolean",
+      "default": false
+    }
+  },
+  "usesContext": [
+    "gutenslider/contentMode",
+    "gutenslider/slidesToShow",
+    "gutenslider/slidesToShowMd",
+    "gutenslider/slidesToShowSm",
+    "gutenslider/linkToFile",
+    "gutenslider/hasLg",
+    "gutenslider/videoAutoplay"
+  ],
+  "supports": {
+    "html": false,
+    "inserter": false,
+    "reusable": false,
+    "defaultStylePicker": false,
+    "interactivity": {
+      "clientNavigation": true
+    }
+  },
+  "render": "file:./render.php"
+}

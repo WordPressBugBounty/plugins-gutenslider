@@ -1,0 +1,135 @@
+// Layout before Swiper runs, so the first paint already shows the slider at
+// its final size and position: no hidden content waiting for JavaScript and
+// no layout shift when it arrives. The render callback prints the slides per
+// view and spacing per breakpoint as custom properties; Swiper takes over
+// with the same numbers (it adds .swiper-initialized).
+
+@use "sass:math";
+
+.wp-block-eedee-block-gutenslider {
+	// Resolved on .eedee-swiper-outer: in "changing content" mode the
+	// per-breakpoint values are set there, not on the block element.
+	.eedee-swiper-outer {
+		--gs-view: var(--gs-per-view-sm);
+		--gs-gap: var(--gs-space-sm);
+
+		@media (min-width: 601px) {
+			--gs-view: var(--gs-per-view-md);
+			--gs-gap: var(--gs-space-md);
+		}
+
+		@media (min-width: 961px) {
+			--gs-view: var(--gs-per-view);
+			--gs-gap: var(--gs-space);
+		}
+	}
+
+	.swiper {
+		overflow: hidden;
+	}
+
+	.swiper:not(.swiper-initialized) .swiper-wrapper {
+		display: flex;
+		gap: var(--gs-gap);
+	}
+
+	// Per breakpoint: a slider can be auto width on one device only.
+	@include per-band using ($band, $min-h) {
+
+		&.slides-number-#{$band} .swiper:not(.swiper-initialized) .swiper-slide {
+			flex: 0 0 calc((100% - (var(--gs-view) - 1) * var(--gs-gap)) / var(--gs-view));
+		}
+
+		// Centered: the first slide starts in the middle, like Swiper places it.
+		&.gs-centered.slides-number-#{$band} .swiper:not(.swiper-initialized) .swiper-wrapper {
+			transform: translateX(calc((100% - (100% - (var(--gs-view) - 1) * var(--gs-gap)) / var(--gs-view)) / 2));
+		}
+
+		// Auto width: the first slide is its image's width at the slider's
+		// height (--gs-first-r, from the server).
+		&.gs-centered.slides-auto-#{$band} .swiper:not(.swiper-initialized) .swiper-wrapper {
+			transform: translateX(calc(50% - #{$min-h} * var(--gs-first-r, 0) / 2));
+		}
+	}
+
+	// Effects that stack the slides (Swiper puts them on top of each other):
+	// stacked from the start, so no slide appears or moves when it runs.
+	&.gs-stacked .swiper:not(.swiper-initialized) {
+
+		.swiper-wrapper {
+			display: grid;
+		}
+
+		.swiper-slide {
+			grid-area: 1 / 1;
+			width: 100%;
+		}
+
+		.swiper-slide:not(:first-child) {
+			visibility: hidden;
+		}
+	}
+
+	&.adaptive-height .swiper:not(.swiper-initialized) .swiper-wrapper {
+		align-items: flex-start;
+	}
+
+	// Controls only work once Swiper runs; they fade in then.
+	.eedee-gutenslider-nav,
+	.eedee-gutenslider-pagination {
+		transition: opacity 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+	}
+
+	&.gs-frontend:not(.gs-finished-controls) {
+
+		.eedee-gutenslider-nav,
+		.eedee-gutenslider-pagination {
+			opacity: 0;
+			pointer-events: none;
+		}
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+	.wp-block-eedee-block-gutenslider {
+
+		.swiper-wrapper {
+			transition-duration: 0s !important;
+		}
+	}
+}
+
+// Screen reader text for slide links, in case the theme lacks the class.
+.wp-block-eedee-block-gutenslide .slide-link .screen-reader-text {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	overflow: hidden;
+	clip-path: inset(50%);
+	white-space: nowrap;
+}
+
+// Bullets drawn by the view script for sliders with loop clones: centered
+// across the slider like Swiper's own bullets.
+.wp-block-eedee-block-gutenslider:is(.dot-position-top, .dot-position-bottom) .eedee-gutenslider-pagination.swiper-pagination-custom.swiper-pagination-bullets {
+	left: 0;
+	right: 0;
+	width: auto;
+}
+
+// From Swiper's navigation CSS, the one rule that applies to our arrows:
+// hidden when there are not enough slides to page.
+.wp-block-eedee-block-gutenslider .swiper-button-lock {
+	display: none;
+}
+
+// A visible focus ring on the controls, whatever the theme resets.
+.wp-block-eedee-block-gutenslider {
+
+	.eedee-gutenslider-nav:focus-visible,
+	.swiper-pagination-bullet:focus-visible {
+		outline: 2px solid var(--gutenslider-dot-color, currentColor);
+		outline-offset: 3px;
+	}
+}

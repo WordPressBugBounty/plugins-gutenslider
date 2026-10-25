@@ -1,0 +1,30 @@
+//fullscreen slider
+body:not(.blog):not(.archive) .wp-block-eedee-block-gutenslider.is-full {
+	position: fixed !important;
+	left: 0 !important;
+	top: 0 !important;
+	bottom: 0 !important;
+	right: 0 !important;
+	height: calc(100vh - 2 * var(--gutenslider-margin-y)) !important;
+	width: 100vw !important;
+	min-width: 100vw;
+	z-index: -10;
+	margin: 0 !important;
+
+	.eedee-background-div img {
+		height: calc(100vh - 2 * var(--gutenslider-margin-y)) !important;
+	}
+
+	.eedee-swiper-outer {
+		height: calc(100vh - 2 * var(--gutenslider-margin-y)) !important;
+		--gutenslider-min-height: calc(100vh - 2 * var(--gutenslider-margin-y)) !important;
+	}
+}
+
+body.blog,
+body.archive {
+
+	.wp-block-eedee-block-gutenslider.is-full {
+		display: none;
+	}
+}

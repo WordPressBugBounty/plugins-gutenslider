@@ -1,0 +1,133 @@
+// "Place the blocks: below / above" (contentPlacement, per-slide content):
+// each slide is a column of the image area, at the slider's minimum height,
+// and the slide's blocks. Slides stretch to the tallest one (with "Grow with
+// the content", Swiper sizes the slider to the slide on show).
+// The arrows, dots and dividers keep their positions, measured on the image
+// area: .eedee-swiper-outer gets the same two rows, and absolutely placed
+// children of a grid take the grid area they name as their box (both lines
+// named: an "auto" end would be the grid's edge). The arrow
+// position "next to the content" names the other row.
+
+.wp-block-eedee-block-gutenslider.content-change:is(.gs-content-below, .gs-content-above) {
+
+	.eedee-swiper-outer {
+		--gs-min-h: var(--gutenslider-min-height-sm);
+
+		@media (min-width: 601px) {
+			--gs-min-h: var(--gutenslider-min-height-md);
+		}
+
+		@media (min-width: 961px) {
+			--gs-min-h: var(--gutenslider-min-height);
+		}
+
+		grid-template-rows: var(--gs-min-h) auto;
+
+		> .swiper {
+			grid-row: 1 / -1;
+		}
+
+		> :is(.eedee-gutenslider-nav, .eedee-gutenslider-pagination, .gutenslider-divider-top, .gutenslider-divider-bottom) {
+			grid-row: 1 / 2;
+		}
+	}
+
+	&.arrow-position-content .eedee-swiper-outer > .eedee-gutenslider-nav {
+		grid-row: 2 / 3;
+	}
+
+	.swiper-wrapper > .swiper-slide {
+		height: auto;
+	}
+
+	.wp-block-eedee-block-gutenslide {
+		grid-template-rows: var(--gs-min-h) 1fr;
+
+		.eedee-background-div {
+			position: relative;
+			inset: auto;
+			grid-area: 1 / 1;
+			height: auto;
+			min-height: 0;
+		}
+
+		.slide-content {
+			grid-area: 2 / 1;
+		}
+	}
+
+	// Width from content (per breakpoint): the image sets the slide's width,
+	// the blocks wrap to it.
+	@include per-band using ($band, $min-h) {
+
+		&.slides-auto-#{$band} {
+
+			.eedee-swiper-outer,
+			.swiper,
+			.swiper-wrapper,
+			.swiper-wrapper > .swiper-slide,
+			.wp-block-eedee-block-gutenslide {
+				height: auto;
+				min-height: 0;
+			}
+
+			.wp-block-eedee-block-gutenslide {
+				display: grid;
+
+				.slide-content {
+					position: relative;
+					inset: auto;
+					contain: inline-size;
+				}
+			}
+
+			.eedee-background-div,
+			.eedee-background-div :is(img, video) {
+				height: var(--gs-min-h);
+				min-height: 0;
+			}
+		}
+	}
+}
+
+.wp-block-eedee-block-gutenslider.content-change.gs-content-above {
+
+	.eedee-swiper-outer {
+		grid-template-rows: auto var(--gs-min-h);
+
+		> :is(.eedee-gutenslider-nav, .eedee-gutenslider-pagination, .gutenslider-divider-top, .gutenslider-divider-bottom) {
+			grid-row: 2 / 3;
+		}
+	}
+
+	&.arrow-position-content .eedee-swiper-outer > .eedee-gutenslider-nav {
+		grid-row: 1 / 2;
+	}
+
+	.wp-block-eedee-block-gutenslide {
+		grid-template-rows: 1fr var(--gs-min-h);
+
+		.eedee-background-div {
+			grid-area: 2 / 1;
+		}
+
+		.slide-content {
+			grid-area: 1 / 1;
+		}
+	}
+}
+
+// Arrows next to the blocks sit in the blocks' row: the blocks keep clear of
+// them, so no arrow covers the text.
+.wp-block-eedee-block-gutenslider.content-change.arrow-position-content:is(.gs-content-below, .gs-content-above) .slide-content {
+	--gs-arrow-clear: calc(var(--gutenslider-arrow-x-offset-sm) + var(--gutenslider-arrow-size-sm) + 8px);
+	padding-inline: var(--gs-arrow-clear);
+
+	@media (min-width: 601px) {
+		--gs-arrow-clear: calc(var(--gutenslider-arrow-x-offset-md) + var(--gutenslider-arrow-size-md) + 8px);
+	}
+
+	@media (min-width: 961px) {
+		--gs-arrow-clear: calc(var(--gutenslider-arrow-x-offset) + var(--gutenslider-arrow-size) + 8px);
+	}
+}

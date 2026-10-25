@@ -1,0 +1,51 @@
+{
+	"name": "gutenslider",
+	"version": "7.2.2",
+	"description": "Slider block for the block editor: images, videos and any blocks on top.",
+	"author": "Niklas Jurij Plessing <niklas@eedee.net> (https://eedee.net)",
+	"license": "GPL-2.0-or-later",
+	"private": true,
+	"files": [
+		"eedee-gutenslider.php",
+		"readme.txt",
+		"includes",
+		"vendor",
+		"build",
+		"src",
+		"!src/pro",
+		"languages",
+		"composer.json",
+		"webpack.config.js"
+	],
+	"scripts": {
+		"setup": "npm install && npm run build && npm run env:start && npm run seed",
+		"prebuild": "rm -rf build",
+		"build": "wp-scripts build --experimental-modules --webpack-copy-php",
+		"start": "wp-scripts start --experimental-modules --webpack-copy-php",
+		"lint:js": "wp-scripts lint-js src",
+		"lint:css": "wp-scripts lint-style 'src/**/*.scss'",
+		"format": "wp-scripts format src",
+		"zip": "node bin/release.mjs --zip-only",
+		"i18n": "wp-env run cli --env-cwd=wp-content/plugins/gutenslider wp i18n make-pot . languages/gutenslider.pot --slug=gutenslider --domain=gutenslider '--exclude=node_modules,vendor,tests,artifacts,bin,src,dist,.archive,.claude,.git,languages,*.zip' && wp-env run cli --env-cwd=wp-content/plugins/gutenslider wp i18n update-po languages/gutenslider.pot && wp-env run cli --env-cwd=wp-content/plugins/gutenslider wp i18n make-mo languages && wp-env run cli --env-cwd=wp-content/plugins/gutenslider wp i18n make-json languages --no-purge && wp-env run cli --env-cwd=wp-content/plugins/gutenslider wp i18n make-php languages",
+		"env:start": "wp-env start",
+		"env:stop": "wp-env stop",
+		"env:destroy": "wp-env destroy",
+		"env:cli": "wp-env run cli wp",
+		"seed": "bash bin/seed.sh",
+		"test:e2e": "playwright test",
+		"test:free": "bin/free-env.sh && playwright test -c playwright.free.config.js",
+		"free:start": "bin/free-env.sh",
+		"free:stop": "bin/free-env.sh --stop",
+		"measure": "node bin/baseline/measure.cjs",
+		"release": "node bin/release.mjs"
+	},
+	"devDependencies": {
+		"@playwright/test": "^1.63.0",
+		"@wordpress/e2e-test-utils-playwright": "^2.1.0",
+		"@wordpress/env": "^11.16.0",
+		"@wordpress/icons": "^17.0.0",
+		"@wordpress/interactivity": "^6.56.0",
+		"@wordpress/scripts": "^36.0.0",
+		"swiper": "^14.3.0"
+	}
+}

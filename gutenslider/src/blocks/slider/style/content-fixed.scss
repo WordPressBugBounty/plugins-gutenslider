@@ -1,0 +1,75 @@
+.wp-block-eedee-block-gutenslider.content-fixed {
+
+	.swiper,
+	.wp-block-eedee-gutenslider__content {
+		grid-area: 1/1;
+	}
+
+	.swiper {
+
+		.swiper-wrapper .wp-block-eedee-block-gutenslide .slide-content {
+			display: none;
+		}
+
+		.swiper-wrapper > *:not(.swiper-slide) {
+			display: none;
+		}
+	}
+
+	.wp-block-eedee-gutenslider__content {
+		display: flex;
+		flex-direction: column;
+		z-index: 1;
+		pointer-events: none;
+		box-sizing: border-box;
+
+		> * {
+			pointer-events: all;
+		}
+
+		.wp-block-embed {
+			align-self: normal !important;
+		}
+
+		padding-top: var(--gutenslider-padding-y);
+		padding-bottom: var(--gutenslider-padding-y);
+		padding-left: var(--gutenslider-padding-x);
+		padding-right: var(--gutenslider-padding-x);
+
+		.block-editor-inner-blocks {
+			pointer-events: all;
+		}
+
+		.wp-block-eedee-block-gutenslide {
+			display: none;
+		}
+
+		//remove margin from first element with or without changing slides
+		> :first-child,
+		> .wp-block-eedee-block-gutenslide + :not(.wp-block-eedee-block-gutenslide) {
+			margin-top: 0;
+		}
+
+		//remove margin from last element
+		> :last-child {
+			margin-bottom: 0;
+		}
+	}
+}
+
+.wp-block-eedee-block-gutenslider.content-fixed.adaptive-height {
+
+	.swiper-wrapper {
+		display: flex;
+		align-content: center;
+	}
+}
+
+.wp-block-eedee-block-gutenslider.content-fixed.adaptive-height {
+
+	.wp-block-eedee-gutenslider__content {
+		min-height: unset;
+	}
+}
+
+// Width from content: see slides-auto.scss (per breakpoint).

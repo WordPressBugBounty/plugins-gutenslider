@@ -1,0 +1,144 @@
+// Video slides from links (see embeds.js):
+// the player box has the video's ratio and sits in the slide like "Show all
+// of it" (contain), or fills it (cover). Until the slide plays, the box
+// shows the poster and a play button. .gs-yt/.ed-bg-youtube: 7.0 betas.
+
+.wp-block-eedee-block-gutenslider :is(.ed-bg-embed, .ed-bg-youtube) {
+
+	.eedee-background-div {
+		background: #000;
+	}
+
+	:is(.gs-embed, .gs-yt) {
+		--gs-r: var(--gs-embed-r, var(--gs-yt-r, 1.7778));
+		position: absolute;
+		inset: 0;
+		display: grid;
+		place-items: center;
+		overflow: hidden;
+		container-type: size;
+
+		> img,
+		> iframe {
+			grid-area: 1 / 1;
+			width: min(100cqw, 100cqh * var(--gs-r));
+			height: auto;
+			max-width: none;
+			aspect-ratio: var(--gs-r);
+			border: 0;
+			object-fit: cover;
+		}
+
+		&.is-cover > img,
+		&.is-cover > iframe {
+			width: max(100cqw, 100cqh * var(--gs-r));
+		}
+
+		// The poster stays under the player until the player shows a frame.
+		&.is-loaded > :is(.gs-embed-play, .gs-yt-play) {
+			opacity: 0;
+			pointer-events: none;
+		}
+	}
+
+	:is(.gs-embed-play, .gs-yt-play) {
+		grid-area: 1 / 1;
+		z-index: 1;
+		padding: 0;
+		border: 0;
+		background: none;
+		cursor: pointer;
+		transition: opacity 0.2s, transform 0.2s;
+
+		svg {
+			display: block;
+		}
+
+		:is(.gs-embed-play__bg, .gs-yt-play__bg) {
+			fill: #212121;
+			fill-opacity: 0.8;
+			transition: fill 0.2s, fill-opacity 0.2s;
+		}
+
+		&:hover,
+		&:focus-visible {
+
+			:is(.gs-embed-play__bg, .gs-yt-play__bg) {
+				fill: var(--gs-embed-accent, #f00);
+				fill-opacity: 1;
+			}
+		}
+
+		&:focus-visible {
+			outline: 2px solid #fff;
+			outline-offset: 4px;
+			border-radius: 12px;
+		}
+	}
+
+	// The slide's own blocks stay clickable; the rest of the content layer
+	// lets clicks through to the player.
+	.slide-content {
+		pointer-events: none;
+
+		> * {
+			pointer-events: auto;
+		}
+	}
+
+	// The overlay only over the poster (the playing video stays clear), and
+	// never in the way of a click.
+	.eedee-background-div__overlay {
+		pointer-events: none;
+	}
+
+	:is(.gs-embed, .gs-yt).is-loaded ~ .eedee-background-div__overlay {
+		opacity: 0 !important;
+	}
+}
+
+// Adaptive height: the slide takes the video's ratio (16:9, or a Short's
+// 9:16), as an image slide takes its photo's.
+.wp-block-eedee-block-gutenslider.adaptive-height :is(.ed-bg-embed, .ed-bg-youtube) .eedee-background-div {
+	height: auto;
+	aspect-ratio: calc(var(--ed-vw, 16) / var(--ed-vh, 9));
+}
+
+// Slides beside the active one: the poster says "click to play here".
+.wp-block-eedee-block-gutenslider :is(.ed-bg-embed, .ed-bg-youtube):not(.swiper-slide-active) :is(.gs-embed, .gs-yt) > img {
+	cursor: pointer;
+}
+
+// A video playing and the pointer resting: the arrows and dots fade out
+// (embeds.js), so the player's own controls are free. They are back at
+// once on any movement; keyboard focus keeps them. An animation, so the
+// arrow styles' own transitions stay as they are.
+@keyframes gs-nav-rest {
+
+	to {
+		opacity: 0;
+	}
+}
+
+.wp-block-eedee-block-gutenslider.gs-nav-idle {
+
+	.eedee-gutenslider-nav:not(:focus-visible),
+	.eedee-gutenslider-pagination:not(:focus-within) {
+		animation: gs-nav-rest 0.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+		pointer-events: none;
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+	.wp-block-eedee-block-gutenslider {
+
+		:is(.gs-embed-play, .gs-yt-play) {
+			transition: none;
+		}
+
+		&.gs-nav-idle :is(.eedee-gutenslider-nav, .eedee-gutenslider-pagination) {
+			animation-duration: 0.01s;
+		}
+	}
+}

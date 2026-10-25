@@ -1,0 +1,129 @@
+// "Width from content" (slides per view: auto): each slide is as wide as its
+// image at the slider's minimum height. Per breakpoint, since auto can be set
+// for one device only (slides-auto-sm / -md / -lg).
+
+@mixin slides-auto($h) {
+	position: relative;
+
+	.eedee-swiper-outer {
+		height: $h;
+	}
+
+	.wp-block-eedee-block-gutenslide {
+		width: auto;
+		height: $h;
+		display: block;
+	}
+
+	.swiper-wrapper {
+		height: $h;
+
+		> .swiper-slide {
+			height: $h;
+
+			&.ed-bg-video {
+				width: auto !important;
+
+				.eedee-background-div {
+					width: calc(var(--ed-vw) / var(--ed-vh) * #{$h});
+				}
+			}
+		}
+	}
+
+	.swiper {
+		width: 100%;
+		height: $h;
+	}
+
+	.swiper-zoom-container {
+		width: auto;
+		height: $h;
+	}
+
+	.swiper-slide .swiper-zoom-container > div {
+		height: $h;
+		width: auto;
+	}
+
+	//overwrite style
+	.wp-block-eedee-block-gutenslide {
+		min-width: var(--slide-min-width);
+
+		.slide-content {
+			overflow: hidden;
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			right: 0;
+			left: 0;
+			height: auto;
+		}
+
+		&.embed-background {
+
+			iframe {
+				height: $h;
+				max-height: unset !important;
+			}
+		}
+	}
+
+	.eedee-background-div {
+		position: relative;
+		height: $h;
+		width: auto;
+		justify-content: center;
+		align-content: center;
+		display: flex;
+
+		.simpleParallax {
+			height: $h;
+		}
+
+		&.no-media-background {
+			min-width: 100%;
+
+			.slide-content {
+				height: $h;
+			}
+		}
+
+		img {
+			height: $h;
+			//overwrite
+			min-height: $h;
+		}
+
+		video {
+			height: $h;
+			//overwrite
+			min-height: $h;
+		}
+	}
+
+	// Fixed content: the content layer has the slides' height.
+	&.content-fixed {
+
+		.swiper-wrapper {
+			display: flex;
+			align-content: center;
+		}
+
+		.wp-block-eedee-gutenslider__content,
+		.fixed-content-edit {
+			height: $h;
+		}
+	}
+}
+
+.wp-block-eedee-block-gutenslider {
+
+	@include per-band using ($band, $min-h) {
+
+		&.slides-auto-#{$band} {
+
+			@include slides-auto($min-h);
+		}
+	}
+}

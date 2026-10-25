@@ -1,0 +1,47 @@
+.wp-block-eedee-block-gutenslider.slides-number {
+
+	.eedee-background-div {
+		// position: absolute;
+		// top: 0;
+		// left: 0;
+		// right: 0;
+		// bottom: 0;
+
+		.simpleParallax {
+			width: 100%;
+			height: 100%;
+		}
+
+		&.no-media-background {
+			min-height: var(--gutenslider-min-height);
+
+			.slide-content {
+				min-height: var(--gutenslider-min-height);
+			}
+		}
+
+		.eedee-background-div__overlay {
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+		}
+
+		img {
+			width: 100%;
+			height: 100%;
+
+			/* fix a bug that seems to be connected to swiper js */
+			padding-bottom: 0 !important;
+		}
+
+		video {
+			width: 100%;
+			height: 100%;
+
+			/* fix a bug that seems to be connected to swiper js */
+			padding-bottom: 0 !important;
+		}
+	}
+}
