@@ -1,6 +1,6 @@
 {
 	"name": "gutenslider",
-	"version": "7.3.1",
+	"version": "7.3.2",
 	"description": "Slider block for the block editor: images, videos and any blocks on top.",
 	"author": "Niklas Jurij Plessing <niklas@eedee.net> (https://eedee.net)",
 	"license": "GPL-2.0-or-later",
@@ -28,6 +28,7 @@
 		"format": "wp-scripts format src",
 		"zip": "node bin/release.mjs --zip-only",
 		"tested-up-to": "node bin/release.mjs --tested-up-to",
+		"blueprint": "node bin/blueprint.mjs",
 		"i18n": "wp-env run cli --env-cwd=wp-content/plugins/gutenslider wp i18n make-pot . languages/gutenslider.pot --slug=gutenslider --domain=gutenslider '--exclude=node_modules,vendor,tests,artifacts,bin,src,dist,.archive,.claude,.git,languages,*.zip' && wp-env run cli --env-cwd=wp-content/plugins/gutenslider wp i18n update-po languages/gutenslider.pot && wp-env run cli --env-cwd=wp-content/plugins/gutenslider wp i18n make-mo languages && wp-env run cli --env-cwd=wp-content/plugins/gutenslider wp i18n make-json languages --no-purge && wp-env run cli --env-cwd=wp-content/plugins/gutenslider wp i18n make-php languages",
 		"env:start": "wp-env start",
 		"env:stop": "wp-env stop",

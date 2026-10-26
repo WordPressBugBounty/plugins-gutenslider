@@ -4,7 +4,7 @@ Tags: slider, carousel, slideshow, hero, image slider
 Requires at least: 6.6
 Tested up to: 7.1
 Requires PHP: 7.4
-Stable tag: 7.3.1
+Stable tag: 7.3.2
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -127,6 +127,12 @@ You can help translate Gutenslider at [translate.wordpress.org](https://translat
 
 == Changelog ==
 
+= 7.3.2 =
+_2026-10-26_
+
+* The plugin page on wordpress.org has a Live Preview: try Gutenslider in WordPress Playground, with a demo page of sliders, before you install it.
+* New in Pro: vertical sliders. "Vertical" in the Motion panel moves the slides up and down, at the slider's height (with the Slide, Fade and Flip effects).
+
 = 7.3.1 =
 _2026-10-25_
 
@@ -205,15 +211,6 @@ _2026-09-28_
 = 6.1.1 =
 * Fix a bug when editing sliders.
 
-= 6.1.0 =
-* Page speed improvements.
-* Load only the CSS and JS a slider needs.
-* New setting to disable lazy loading on the first image.
-* New setting to enable or disable zoom in the lightbox.
-* Video slides pause when they are not active (can be disabled).
-* Swiper 9.3.2.
-* Styles tab for block padding and spacing.
-* Freemius SDK 2.6.0.
 
 
 
