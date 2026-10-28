@@ -415,7 +415,7 @@ final class Render {
 			$next_arrow
 		);
 		if ( ! empty( $attr['randomOrder'] ) ) {
-			$swiper .= self::shuffle_script( $attr, $per_sm );
+			$swiper .= self::shuffle_script( $attr, $per_sm, $dom_id );
 		}
 
 		$dividers = $effect['dividers'] ? self::dividers( $attr ) : array( '', '' );
@@ -547,6 +547,16 @@ final class Render {
 				'watchState'   => true,
 			) : false,
 			'dividers'          => ( $dividers['top']['value'] ?? 'none' ) !== 'none' || ( $dividers['bottom']['value'] ?? 'none' ) !== 'none',
+			// Swiper's labels, translated: its English defaults would replace
+			// the buttons' labels. The loop's own dots use the bullet one too.
+			'a11y'              => array(
+				'prevSlideMessage'        => __( 'Previous slide', 'gutenslider' ),
+				'nextSlideMessage'        => __( 'Next slide', 'gutenslider' ),
+				'firstSlideMessage'       => __( 'This is the first slide', 'gutenslider' ),
+				'lastSlideMessage'        => __( 'This is the last slide', 'gutenslider' ),
+				/* translators: %d: slide number */
+				'paginationBulletMessage' => str_replace( '%d', '{{index}}', __( 'Go to slide %d', 'gutenslider' ) ),
+			),
 		);
 		// Only when on: sliders without it keep the settings they had.
 		if ( ! empty( $attr['randomOrder'] ) ) {
@@ -663,7 +673,10 @@ final class Render {
 	 * neighbours to eager before they slide in.
 	 *
 	 * The `sizes` follow the slides per view of each breakpoint, so a
-	 * three-up carousel does not download full-width files.
+	 * three-up carousel does not download full-width files. A "cover" image
+	 * is drawn wider than its slide when the slide is relatively taller (a
+	 * landscape photo on a phone): see cover_sizes(). The view script sets a
+	 * cover image that has not loaded yet to the width it is drawn at.
 	 *
 	 * @param string $slides   Rendered slides.
 	 * @param array  $attr     Slider attributes.
@@ -698,11 +711,78 @@ final class Render {
 				$tags->set_attribute( 'fetchpriority', 'high' );
 			}
 			if ( null !== $tags->get_attribute( 'srcset' ) ) {
-				// `auto` lets lazy images use their laid-out width.
-				$tags->set_attribute( 'sizes', ( $eager ? '' : 'auto, ' ) . $sizes );
+				$cover = self::cover_sizes( $tags, $attr, $per_view );
+				// `auto` lets lazy images use their laid-out width, which is
+				// the box, not the drawn width of a cover image.
+				$tags->set_attribute( 'sizes', $cover ? $cover : ( $eager ? '' : 'auto, ' ) . $sizes );
 			}
 		}
 		return $tags->get_updated_html();
+	}
+
+	/**
+	 * `sizes` for a "cover" image: per breakpoint the wider of the slide's
+	 * width and the slider's height times the image's ratio. Only where the
+	 * image fills the slider's height: not with adaptive height (that
+	 * breakpoint keeps the width) or the blocks below or above the image.
+	 * Empty when nothing changes or a height is no plain length.
+	 *
+	 * @param \WP_HTML_Tag_Processor $tags     At the image.
+	 * @param array                  $attr     Slider attributes.
+	 * @param array                  $per_view Slides per view: mobile, tablet, desktop.
+	 * @return string
+	 */
+	private static function cover_sizes( $tags, $attr, $per_view ) {
+		$w = (int) $tags->get_attribute( 'width' );
+		$h = (int) $tags->get_attribute( 'height' );
+		if ( ! $w || ! $h || ! preg_match( '/object-fit:\s*cover/', (string) $tags->get_attribute( 'style' ) )
+			|| in_array( $attr['contentPlacement'] ?? '', array( 'below', 'above' ), true ) ) {
+			return '';
+		}
+		$bands = array(
+			array( '(max-width: 600px) ', $per_view[0], 'sliderHeightSm', 'adaptiveHeightSm' ),
+			array( '(max-width: 960px) ', $per_view[1], 'sliderHeightMd', 'adaptiveHeightMd' ),
+			array( '', $per_view[2], 'sliderHeight', 'adaptiveHeight' ),
+		);
+		$out     = array();
+		$changed = false;
+		foreach ( $bands as list( $query, $per, $height_key, $adaptive_key ) ) {
+			// Auto width: the slide already has the image's ratio.
+			$width = 'auto' === $per || (float) $per <= 1 ? '100vw' : sprintf( 'calc(100vw / %s)', round( (float) $per, 2 ) );
+			$height = ! empty( $attr['isFullScreen'] ) ? '100vh' : self::css( $attr[ $height_key ] ?? '', '50vh' );
+			if ( 'auto' !== $per && empty( $attr[ $adaptive_key ] ) ) {
+				if ( ! preg_match( '/^\d+(\.\d+)?(px|vh|svh|lvh|dvh|vw|rem|em)$/', $height ) ) {
+					return '';
+				}
+				$width   = sprintf( 'max(%1$s, calc(%2$s * %3$s))', $width, $height, round( $w / $h, 4 ) );
+				$changed = true;
+			}
+			$out[] = $query . $width;
+		}
+		return $changed ? implode( ', ', $out ) : '';
+	}
+
+	/**
+	 * Takes the `auto` WordPress puts before a lazy image's `sizes` (in
+	 * wp_filter_content_tags()) off a slide's "cover" image again: `auto` is
+	 * the box's width, not the drawn width cover_sizes() asks for.
+	 *
+	 * @param string $image An image tag from the content.
+	 * @return string
+	 */
+	public static function cover_img_tag( $image ) {
+		if ( false === strpos( $image, 'gs-slide-media' ) ) {
+			return $image;
+		}
+		$tags = new \WP_HTML_Tag_Processor( $image );
+		if ( $tags->next_tag( array( 'tag_name' => 'IMG', 'class_name' => 'gs-slide-media' ) ) ) {
+			$sizes = (string) $tags->get_attribute( 'sizes' );
+			if ( preg_match( '/^auto\s*,\s*(.*\bmax\(.*)$/', $sizes, $m ) ) {
+				$tags->set_attribute( 'sizes', $m[1] );
+				return $tags->get_updated_html();
+			}
+		}
+		return $image;
 	}
 
 	/**
@@ -764,20 +844,29 @@ final class Render {
 	 * shuffles too if this did not run (the editor's Preview). No "&" in
 	 * it: the post content filters would turn it into "&#038;".
 	 *
+	 * Optimizers that combine and defer inline scripts (LiteSpeed Cache)
+	 * move it to the footer, where currentScript is the combined file: it
+	 * then finds the slider by its id, and leaves it alone if mount.js
+	 * shuffled it already.
+	 *
 	 * @param array            $attr   Slider attributes.
 	 * @param float|int|string $per_sm Slides per view, mobile.
+	 * @param string           $dom_id Slider element id.
 	 * @return string
 	 */
-	private static function shuffle_script( $attr, $per_sm ) {
+	private static function shuffle_script( $attr, $per_sm, $dom_id ) {
 		$js = sprintf(
-			'(function(s,v,p){var w=s.querySelector(".swiper-wrapper"),a=[].slice.call(w.children),i,j,t;'
+			'(function(c,v,p){var s=(c?c.closest(".wp-block-eedee-block-gutenslider"):null)||document.getElementById(%3$s);'
+			. 'if(!s||s.hasAttribute("data-gs-shuffled"))return;'
+			. 'var w=s.querySelector(".swiper-wrapper"),a=[].slice.call(w.children),i,j,t;'
 			. 'a.forEach(function(e,n){e.setAttribute("data-gs-pos",n)});'
 			. 'for(i=a.length-1;i>0;i--){j=Math.floor(Math.random()*(i+1));t=a[i];a[i]=a[j];a[j]=t}'
 			. 'a.forEach(function(e,n){var m=n<v?e.querySelector("img.gs-slide-media"):null;'
 			. 'if(m){m.sizes=m.sizes.replace(/^auto,\\s*/,"");m.loading="eager";if(p>n)m.fetchPriority="high"}w.appendChild(e)});'
-			. 's.setAttribute("data-gs-shuffled","")})(document.currentScript.closest(".wp-block-eedee-block-gutenslider"),%1$d,%2$d);',
+			. 's.setAttribute("data-gs-shuffled","")})(document.currentScript,%1$d,%2$d);',
 			self::visible( $per_sm ),
-			self::eager_first( $attr ) ? 1 : 0
+			self::eager_first( $attr ) ? 1 : 0,
+			wp_json_encode( $dom_id )
 		);
 		return wp_get_inline_script_tag( $js );
 	}

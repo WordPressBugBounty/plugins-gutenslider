@@ -120,6 +120,31 @@ export function whenNear( el, callback ) {
 }
 
 /**
+ * The width a "cover" slide image is drawn at: wider than its box when the
+ * box is relatively taller than the image (a landscape photo on a phone).
+ * Layout sizes, so the 3D effects' transforms don't count. 0 for other
+ * images, or when the size is not known.
+ *
+ * @param {HTMLImageElement} img Image.
+ * @return {number} CSS pixels.
+ */
+function coverWidth( img ) {
+	const ratio =
+		Number( img.getAttribute( 'width' ) ) /
+		Number( img.getAttribute( 'height' ) );
+	if (
+		! img.classList.contains( 'gs-slide-media' ) ||
+		img.style.objectFit !== 'cover' ||
+		! ratio ||
+		! Number.isFinite( ratio ) ||
+		! img.offsetWidth
+	) {
+		return 0;
+	}
+	return Math.ceil( Math.max( img.offsetWidth, img.offsetHeight * ratio ) );
+}
+
+/**
  * Makes the media of the slides next to the active one load now, so a slide
  * never comes in empty; plays and pauses background videos.
  *
@@ -137,8 +162,12 @@ function onSlide( swiper ) {
 				return;
 			}
 			// `sizes="auto"` only works on lazy images; an eager one would
-			// fall back to the largest file.
-			if ( img.sizes.startsWith( 'auto,' ) ) {
+			// fall back to the largest file. A cover image gets the width it
+			// is drawn at: `auto` would be its box's.
+			const drawn = coverWidth( img );
+			if ( drawn ) {
+				img.sizes = `${ drawn }px`;
+			} else if ( img.sizes.startsWith( 'auto,' ) ) {
 				img.sizes = img.sizes.slice( 5 ).trim();
 			}
 			img.loading = 'eager';
@@ -306,9 +335,16 @@ function fillLoop( el, params ) {
  * @param {Object}      options    Pagination settings.
  * @param {number}      count      Number of real slides.
  * @param {string}      direction  Swiper direction.
+ * @param {string}      message    Bullet label, translated: "{{index}}" is the slide number.
  * @return {Function} Updates the pagination for a Swiper instance.
  */
-export function realPagination( pagination, options, count, direction ) {
+export function realPagination(
+	pagination,
+	options,
+	count,
+	direction,
+	message = 'Go to slide {{index}}'
+) {
 	pagination.className = pagination.className.replace(
 		/\bswiper-pagination-\S+/g,
 		''
@@ -322,8 +358,15 @@ export function realPagination( pagination, options, count, direction ) {
 	pagination.innerHTML = Array.from(
 		{ length: count },
 		( _, i ) =>
-			`<span class="swiper-pagination-bullet" data-gs-index="${ i }" role="button" tabindex="0" aria-label="Go to slide ${ i + 1 }"></span>`
+			`<span class="swiper-pagination-bullet" data-gs-index="${ i }" role="button" tabindex="0"></span>`
 	).join( '' );
+	// Set as attributes: the label is text, not markup.
+	[ ...pagination.children ].forEach( ( bullet, i ) =>
+		bullet.setAttribute(
+			'aria-label',
+			message.replace( /\{\{index\}\}/g, i + 1 )
+		)
+	);
 	if ( ! pagination.dataset.gsClick ) {
 		pagination.dataset.gsClick = '1';
 		const go = ( e ) => {
@@ -461,7 +504,8 @@ export async function mount( el ) {
 			paginationEl,
 			params.pagination || {},
 			realCount,
-			params.direction
+			params.direction,
+			params.a11y?.paginationBulletMessage
 		);
 		params.pagination = false;
 	} else {

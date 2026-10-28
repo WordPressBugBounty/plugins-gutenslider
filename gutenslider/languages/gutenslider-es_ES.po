@@ -39,84 +39,85 @@ msgid "https://eedee.net"
 msgstr "https://eedee.net"
 
 #. translators: %s: video title
-#: includes/class-embed.php:105
-#: build/blocks/slider/index.js:7
+#: includes/class-embed.php:108
+#: build/blocks/slider/index.js:5
 #, php-format,js-format
 msgid "Play video: %s"
 msgstr "Reproducir vídeo: %s"
 
 #. translators: %s: video title
-#: includes/class-embed.php:105
-#: build/blocks/slider/index.js:7
+#: includes/class-embed.php:108
+#: build/blocks/slider/index.js:5
 msgid "Play video"
 msgstr "Reproducir vídeo"
 
-#: includes/class-plugin.php:98
+#: includes/class-plugin.php:122
 msgid "Sliders"
 msgstr "Sliders"
 
-#: includes/class-plugin.php:137
+#: includes/class-plugin.php:161
 msgid "Documentation"
 msgstr "Documentación"
 
-#: includes/class-render.php:353
+#: includes/class-render.php:384
 msgid "carousel"
 msgstr "carrusel"
 
-#: includes/class-render.php:354
-#: build/blocks/slider/index.js:6
+#: includes/class-render.php:385
 msgid "Slider"
 msgstr "Slider"
 
-#: includes/class-render.php:388
-#: build/blocks/slider/index.js:8
+#: includes/class-render.php:412
+#: includes/class-render.php:553
+#: build/blocks/slider/index.js:6
 msgid "Previous slide"
 msgstr "Diapositiva anterior"
 
-#: includes/class-render.php:390
-#: build/blocks/slider/index.js:8
+#: includes/class-render.php:414
+#: includes/class-render.php:554
+#: build/blocks/slider/index.js:6
 msgid "Next slide"
 msgstr "Diapositiva siguiente"
 
-#: includes/class-render.php:890
+#: includes/class-render.php:989
 msgid "Open link"
 msgstr "Abrir enlace"
 
-#: includes/class-render.php:900
+#: includes/class-render.php:999
 msgid "Open image"
 msgstr "Abrir imagen"
 
-#: includes/class-render.php:913
+#: includes/class-render.php:1012
 msgctxt "ARIA role description"
 msgid "slide"
 msgstr "diapositiva"
 
-#: includes/class-render.php:1050
+#: includes/class-render.php:1162
 msgid "Image viewer"
 msgstr "Visor de imágenes"
 
-#: includes/class-render.php:1051
+#: includes/class-render.php:1163
 msgid "Close"
 msgstr "Cerrar"
 
-#: includes/class-render.php:1052
+#: includes/class-render.php:1164
 msgid "Previous image"
 msgstr "Imagen anterior"
 
-#: includes/class-render.php:1053
+#: includes/class-render.php:1165
 msgid "Next image"
 msgstr "Imagen siguiente"
 
-#: includes/class-render.php:1054
+#: includes/pro/render.php:244
 msgid "Zoom"
 msgstr "Zoom"
 
-#: includes/class-render.php:1055
+#: includes/pro/render.php:245
 msgid "Zoom out"
 msgstr "Alejar"
 
 #. translators: %d: image number in the lightbox
-#: includes/class-render.php:1057
+#: includes/class-render.php:1167
 #, php-format
 msgid "Show image %d"
 msgstr "Mostrar imagen %d"
@@ -135,7 +136,7 @@ msgstr "No se encontró el vídeo de Dailymotion %s."
 
 #. translators: %s: a link
 #: includes/pro/video-sources/class-dailymotion-source.php:139
-#: includes/pro/video-sources/class-vimeo-source.php:138
+#: includes/pro/video-sources/class-vimeo-source.php:140
 #, php-format
 msgid "No public videos found at %s."
 msgstr "No se encontraron vídeos públicos en %s."
@@ -153,53 +154,53 @@ msgid "The TikTok video %s was not found (private, or removed)."
 msgstr "No se encontró el vídeo de TikTok %s (privado o eliminado)."
 
 #. translators: %s: a link
-#: includes/pro/video-sources/class-vimeo-source.php:117
+#: includes/pro/video-sources/class-vimeo-source.php:119
 #, php-format
 msgid "%s is not a Vimeo video, user, channel or showcase link."
 msgstr "%s no es un enlace de Vimeo a un vídeo, usuario, canal o showcase."
 
 #. translators: %s: a link
-#: includes/pro/video-sources/class-vimeo-source.php:125
+#: includes/pro/video-sources/class-vimeo-source.php:127
 #, php-format
 msgid "The Vimeo video %s cannot be embedded (private, or embedding is off)."
 msgstr "El vídeo de Vimeo %s no se puede insertar (privado o con la inserción desactivada)."
 
-#: includes/pro/video-sources/class-youtube-channel-source.php:39
+#: includes/pro/video-sources/class-youtube-channel-source.php:40
 msgid "YouTube channel"
 msgstr "Canal de YouTube"
 
 #. translators: %s: a link
-#: includes/pro/video-sources/class-youtube-channel-source.php:86
+#: includes/pro/video-sources/class-youtube-channel-source.php:87
 #, php-format
 msgid "No YouTube channel found at %s."
 msgstr "No se encontró ningún canal de YouTube en %s."
 
 #. translators: %s: a link
-#: includes/pro/video-sources/class-youtube-channel-source.php:103
+#: includes/pro/video-sources/class-youtube-channel-source.php:104
 #, php-format
 msgid "No videos found on the channel %s."
 msgstr "No se encontraron vídeos en el canal %s."
 
-#: includes/svg.php:29
+#: includes/svg.php:27
 msgid "No Divider"
 msgstr "Sin separador"
 
-#: includes/svg.php:215
+#: includes/svg.php:213
 msgid "Text: Previous, Next"
 msgstr "Texto: Anterior, Siguiente"
 
-#: includes/svg.php:216
+#: includes/svg.php:214
 msgctxt "slider arrow"
 msgid "Previous"
 msgstr "Anterior"
 
-#: includes/svg.php:217
+#: includes/svg.php:215
 msgctxt "slider arrow"
 msgid "Next"
 msgstr "Siguiente"
 
 #: includes/video-sources/class-file-source.php:41
-#: build/blocks/slider/index.js:4
+#: build/blocks/slider/index.js:3
 msgid "Video file"
 msgstr "Archivo de vídeo"
 
@@ -209,42 +210,32 @@ msgstr "Archivo de vídeo"
 msgid "%s is not a video file."
 msgstr "%s no es un archivo de vídeo."
 
-#: includes/video-sources/class-video-sources.php:67
-msgid "YouTube channels"
-msgstr "Canales de YouTube"
-
-#. translators: 1: a link, 2: a video platform, e.g. "Vimeo"
-#: includes/video-sources/class-video-sources.php:228
-#, php-format
-msgid "%1$s: %2$s links need Gutenslider Pro."
-msgstr "%1$s: los enlaces de %2$s requieren Gutenslider Pro."
-
 #. translators: %s: what was pasted
-#: includes/video-sources/class-video-sources.php:230
+#: includes/video-sources/class-video-sources.php:212
 #, php-format
 msgid "%s is not a supported video link."
 msgstr "%s no es un enlace de vídeo compatible."
 
 #. translators: %s: a link
-#: includes/video-sources/class-youtube-source.php:119
+#: includes/video-sources/class-youtube-source.php:113
 #, php-format
 msgid "No videos found in the playlist %s (private playlists cannot be read)."
 msgstr "No se encontraron vídeos en la lista %s (las listas privadas no se pueden leer)."
 
 #: build/blocks/slider/index.js:1
-#: build/blocks/slider/index.js:2
+#: build/blocks/slider/index.js:3
 #: build/pro/editor.js:1
 msgid "Desktop"
 msgstr "Escritorio"
 
 #: build/blocks/slider/index.js:1
-#: build/blocks/slider/index.js:2
+#: build/blocks/slider/index.js:3
 #: build/pro/editor.js:1
 msgid "Tablet"
 msgstr "Tableta"
 
 #: build/blocks/slider/index.js:1
-#: build/blocks/slider/index.js:2
+#: build/blocks/slider/index.js:3
 #: build/pro/editor.js:1
 msgid "Mobile"
 msgstr "Móvil"
@@ -263,772 +254,734 @@ msgstr "Los ajustes marcados con un dispositivo se aplican al dispositivo selecc
 msgid "%1$s (%2$s)"
 msgstr "%1$s (%2$s)"
 
-#: build/blocks/slider/index.js:2
+#: build/blocks/slider/index.js:3
 msgid "None"
 msgstr "Ninguno"
 
-#: build/blocks/slider/index.js:2
+#: build/blocks/slider/index.js:3
 msgid "Caption"
 msgstr "Leyenda"
 
-#: build/blocks/slider/index.js:2
+#: build/blocks/slider/index.js:3
 msgid "Title – caption"
 msgstr "Título – leyenda"
 
-#: build/blocks/slider/index.js:2
+#: build/blocks/slider/index.js:3
 msgid "Title – caption – description"
 msgstr "Título – leyenda – descripción"
 
-#: build/blocks/slider/index.js:2
+#: build/blocks/slider/index.js:3
 msgctxt "slider effect"
 msgid "Slide"
 msgstr "Deslizar"
 
-#: build/blocks/slider/index.js:2
+#: build/blocks/slider/index.js:3
 msgctxt "slider effect"
 msgid "Fade"
 msgstr "Fundido"
 
-#: build/blocks/slider/index.js:2
+#: build/blocks/slider/index.js:3
 msgid "Not with this effect: the blocks stay on top."
 msgstr "No con este efecto: los bloques quedan encima."
 
-#: build/blocks/slider/index.js:2
+#: build/blocks/slider/index.js:3
 msgid "The image keeps the minimum height; the blocks take the room they need."
 msgstr "La imagen mantiene la altura mínima; los bloques ocupan el espacio que necesitan."
 
-#: build/blocks/slider/index.js:2
+#: build/blocks/slider/index.js:3
 msgid "Slides"
 msgstr "Diapositivas"
 
-#: build/blocks/slider/index.js:2
+#: build/blocks/slider/index.js:3
 msgid "Content"
 msgstr "Contenido"
 
-#: build/blocks/slider/index.js:2
+#: build/blocks/slider/index.js:3
 msgid "The same blocks stay on top while the backgrounds change. Add them below the slides."
 msgstr "Los mismos bloques se quedan encima mientras cambian los fondos. Añádelos debajo de las diapositivas."
 
-#: build/blocks/slider/index.js:2
+#: build/blocks/slider/index.js:3
 msgid "Each slide has its own blocks."
 msgstr "Cada diapositiva tiene sus propios bloques."
 
-#: build/blocks/slider/index.js:2
+#: build/blocks/slider/index.js:3
 msgid "Per slide"
 msgstr "Por diapositiva"
 
-#: build/blocks/slider/index.js:2
+#: build/blocks/slider/index.js:3
 msgid "Same on all"
 msgstr "Igual en todas"
 
-#: build/blocks/slider/index.js:2
+#: build/blocks/slider/index.js:3
 msgid "Blocks"
 msgstr "Bloques"
 
-#: build/blocks/slider/index.js:2
+#: build/blocks/slider/index.js:3
 msgctxt "content placement"
 msgid "On top"
 msgstr "Encima"
 
-#: build/blocks/slider/index.js:2
+#: build/blocks/slider/index.js:3
 msgctxt "content placement"
 msgid "Below"
 msgstr "Debajo"
 
-#: build/blocks/slider/index.js:2
+#: build/blocks/slider/index.js:3
 msgctxt "content placement"
 msgid "Above"
 msgstr "Arriba"
 
-#: build/blocks/slider/index.js:2
+#: build/blocks/slider/index.js:3
 msgid "Content width"
 msgstr "Ancho del contenido"
 
-#: build/blocks/slider/index.js:2
+#: build/blocks/slider/index.js:3
 msgid "The blocks line up with the theme's width; the background stays full width."
 msgstr "Los bloques se alinean con el ancho del tema; el fondo mantiene el ancho completo."
 
-#: build/blocks/slider/index.js:2
+#: build/blocks/slider/index.js:3
 msgctxt "content width"
 msgid "Full"
 msgstr "Completo"
 
-#: build/blocks/slider/index.js:2
+#: build/blocks/slider/index.js:3
 msgctxt "content width"
 msgid "Wide"
 msgstr "Ancho"
 
-#: build/blocks/slider/index.js:2
+#: build/blocks/slider/index.js:3
 msgctxt "content width"
 msgid "Content"
 msgstr "Contenido"
 
-#: build/blocks/slider/index.js:2
+#: build/blocks/slider/index.js:3
 msgid "This effect shows one slide at a time."
 msgstr "Este efecto muestra una diapositiva cada vez."
 
-#: build/blocks/slider/index.js:2
+#: build/blocks/slider/index.js:3
 msgid "Width from content"
 msgstr "Ancho según el contenido"
 
-#: build/blocks/slider/index.js:2
+#: build/blocks/slider/index.js:3
 msgid "Each slide is as wide as its image. Slides without media use their own width setting."
 msgstr "Cada diapositiva es tan ancha como su imagen. Las diapositivas sin medios usan su propio ajuste de ancho."
 
-#: build/blocks/slider/index.js:2
+#: build/blocks/slider/index.js:3
 msgid "Slides in view"
 msgstr "Diapositivas visibles"
 
-#: build/blocks/slider/index.js:2
+#: build/blocks/slider/index.js:3
 msgid "Slides per step"
 msgstr "Diapositivas por paso"
 
-#: build/blocks/slider/index.js:2
+#: build/blocks/slider/index.js:3
 msgid "Space between slides, px"
 msgstr "Espacio entre diapositivas, px"
 
-#: build/blocks/slider/index.js:2
+#: build/blocks/slider/index.js:3
 msgid "Minimum height"
 msgstr "Altura mínima"
 
-#: build/blocks/slider/index.js:2
+#: build/blocks/slider/index.js:3
 msgid "Grow with the content"
 msgstr "Crecer con el contenido"
 
-#: build/blocks/slider/index.js:2
+#: build/blocks/slider/index.js:3
 msgid "The slider takes the height of the slide on show."
 msgstr "El slider toma la altura de la diapositiva que se muestra."
 
-#: build/blocks/slider/index.js:2
+#: build/blocks/slider/index.js:3
 msgid "Full screen height"
 msgstr "Altura de pantalla completa"
 
-#. translators: %s: setting value saved with Gutenslider Pro
-#: build/blocks/slider/index.js:4
-#, js-format
-msgid "%s (Pro)"
-msgstr "%s (Pro)"
-
-#: build/blocks/slider/index.js:4
+#: build/blocks/slider/index.js:3
 msgid "Effect"
 msgstr "Efecto"
 
-#: build/blocks/slider/index.js:4
+#: build/blocks/slider/index.js:3
 msgid "Motion"
 msgstr "Movimiento"
 
-#: build/blocks/slider/index.js:4
-#: build/blocks/slider/index.js:5
+#: build/blocks/slider/index.js:3
 msgid "Loop"
 msgstr "Bucle"
 
-#: build/blocks/slider/index.js:4
+#: build/blocks/slider/index.js:3
 msgid "After the last slide comes the first."
 msgstr "Tras la última diapositiva viene la primera."
 
-#: build/blocks/slider/index.js:4
+#: build/blocks/slider/index.js:3
 msgid "Random order"
 msgstr "Orden aleatorio"
 
-#: build/blocks/slider/index.js:4
+#: build/blocks/slider/index.js:3
 msgid "A new order on each visit, also on cached pages. The editor keeps the saved order."
 msgstr "Un orden nuevo en cada visita, también en páginas en caché. El editor mantiene el orden guardado."
 
-#: build/blocks/slider/index.js:4
+#: build/blocks/slider/index.js:3
 msgid "Center the active slide"
 msgstr "Centrar la diapositiva activa"
 
-#: build/blocks/slider/index.js:4
+#: build/blocks/slider/index.js:3
 msgid "Autoplay"
 msgstr "Reproducción automática"
 
-#: build/blocks/slider/index.js:4
+#: build/blocks/slider/index.js:3
 msgid "Stops for visitors who prefer reduced motion."
 msgstr "Se detiene para los visitantes que prefieren movimiento reducido."
 
-#: build/blocks/slider/index.js:4
+#: build/blocks/slider/index.js:3
 msgid "Pause while the pointer is over the slider"
 msgstr "Pausar mientras el puntero está sobre el slider"
 
-#: build/blocks/slider/index.js:4
+#: build/blocks/slider/index.js:3
 msgid "Play videos when their slide shows"
 msgstr "Reproducir los vídeos cuando se muestra su diapositiva"
 
-#: build/blocks/slider/index.js:4
+#: build/blocks/slider/index.js:3
 msgid "For all video slides; a slide can set its own."
 msgstr "Para todas las diapositivas de vídeo; cada diapositiva puede definir el suyo."
 
-#: build/blocks/slider/index.js:4
+#: build/blocks/slider/index.js:3
 msgid "Arrows"
 msgstr "Flechas"
 
-#: build/blocks/slider/index.js:4
+#: build/blocks/slider/index.js:3
 msgid "Show on"
 msgstr "Mostrar en"
 
-#: build/blocks/slider/index.js:4
+#: build/blocks/slider/index.js:3
 msgid "Style"
 msgstr "Estilo"
 
-#: build/blocks/slider/index.js:4
+#: build/blocks/slider/index.js:3
 msgid "Size in px"
 msgstr "Tamaño en px"
 
-#: build/blocks/slider/index.js:4
+#: build/blocks/slider/index.js:3
 msgid "Pagination"
 msgstr "Paginación"
 
-#: build/blocks/slider/index.js:4
+#: build/blocks/slider/index.js:3
 msgid "Dividers"
 msgstr "Separadores"
 
-#: build/blocks/slider/index.js:4
+#: build/blocks/slider/index.js:3
 msgid "Dividers do not show with this effect."
 msgstr "Los separadores no se muestran con este efecto."
 
-#: build/blocks/slider/index.js:4
-#: build/pro/editor.js:1
+#: build/blocks/slider/index.js:3
 msgid "Top"
 msgstr "Arriba"
 
-#: build/blocks/slider/index.js:4
-#: build/pro/editor.js:1
+#: build/blocks/slider/index.js:3
 msgid "Bottom"
 msgstr "Abajo"
 
-#: build/blocks/slider/index.js:4
+#: build/blocks/slider/index.js:3
 msgctxt "divider"
 msgid "None"
 msgstr "Ninguno"
 
-#: build/blocks/slider/index.js:4
-#: build/blocks/slider/index.js:5
+#: build/blocks/slider/index.js:3
 msgid "Color"
 msgstr "Color"
 
-#: build/blocks/slider/index.js:4
+#: build/blocks/slider/index.js:3
 msgid "Flip horizontally"
 msgstr "Voltear horizontalmente"
 
-#: build/blocks/slider/index.js:4
+#: build/blocks/slider/index.js:3
 msgid "Lightbox"
 msgstr "Lightbox"
 
-#: build/blocks/slider/index.js:4
+#: build/blocks/slider/index.js:3
 msgid "Open images and videos in a lightbox"
 msgstr "Abrir imágenes y vídeos en una lightbox"
 
-#: build/blocks/slider/index.js:4
+#: build/blocks/slider/index.js:3
 msgid "On click: the slide backgrounds, and Image and Video blocks on the slides. Not for slides with a link."
 msgstr "Al hacer clic: los fondos de las diapositivas y los bloques de imagen y vídeo en ellas. No en diapositivas con enlace."
 
-#: build/blocks/slider/index.js:4
+#: build/blocks/slider/index.js:3
 msgid "Look"
 msgstr "Aspecto"
 
-#: build/blocks/slider/index.js:4
-msgid "Uses the lightbox colors set with Pro."
-msgstr "Usa los colores de lightbox definidos con Pro."
-
-#: build/blocks/slider/index.js:4
+#: build/blocks/slider/index.js:3
 msgctxt "lightbox look"
 msgid "Light"
 msgstr "Claro"
 
-#: build/blocks/slider/index.js:4
+#: build/blocks/slider/index.js:3
 msgctxt "lightbox look"
 msgid "Dark"
 msgstr "Oscuro"
 
-#: build/blocks/slider/index.js:4
+#: build/blocks/slider/index.js:3
 msgid "Slider ID (for custom CSS)"
 msgstr "ID del slider (para CSS personalizado)"
 
-#: build/blocks/slider/index.js:4
+#: build/blocks/slider/index.js:3
 msgid "Load the first image right away"
 msgstr "Cargar la primera imagen de inmediato"
 
-#: build/blocks/slider/index.js:4
+#: build/blocks/slider/index.js:3
 msgid "For a slider at the top of the page. The first slider on a page does this anyway."
 msgstr "Para un slider en la parte superior de la página. El primer slider de una página lo hace de todos modos."
 
-#: build/blocks/slider/index.js:4
+#: build/blocks/slider/index.js:3
 msgid "Captions from the Media Library"
 msgstr "Leyendas de la biblioteca de medios"
 
-#: build/blocks/slider/index.js:4
+#: build/blocks/slider/index.js:3
 msgid "Adds a paragraph with the image texts to each image slide. You can edit it afterwards."
 msgstr "Añade un párrafo con los textos de la imagen a cada diapositiva de imagen. Puedes editarlo después."
 
-#: build/blocks/slider/index.js:4
+#: build/blocks/slider/index.js:3
 msgid "Link images to the file"
 msgstr "Enlazar imágenes al archivo"
 
-#: build/blocks/slider/index.js:4
+#: build/blocks/slider/index.js:3
 msgid "The slider’s lightbox is on and opens the images."
 msgstr "La lightbox del slider está activada y abre las imágenes."
 
-#: build/blocks/slider/index.js:4
+#: build/blocks/slider/index.js:3
 msgid "For lightbox plugins that open linked images. Slides with their own link keep it."
 msgstr "Para plugins de lightbox que abren imágenes enlazadas. Las diapositivas con enlace propio lo mantienen."
 
-#: build/blocks/slider/index.js:4
+#: build/blocks/slider/index.js:3
 msgid "Show the slider on"
 msgstr "Mostrar el slider en"
 
-#: build/blocks/slider/index.js:4
+#: build/blocks/slider/index.js:3
 msgid "Arrow keys change slides"
 msgstr "Las teclas de flecha cambian de diapositiva"
 
-#: build/blocks/slider/index.js:4
+#: build/blocks/slider/index.js:3
 msgid "While the slider is on screen."
 msgstr "Mientras el slider está en pantalla."
 
-#: build/blocks/slider/index.js:4
+#: build/blocks/slider/index.js:3
 msgid "Link to each slide"
 msgstr "Enlace a cada diapositiva"
 
-#: build/blocks/slider/index.js:4
+#: build/blocks/slider/index.js:3
 msgid "The page address follows the slide on show (#name), so a shared link opens that slide."
 msgstr "La dirección de la página sigue a la diapositiva que se muestra (#name), así un enlace compartido abre esa diapositiva."
 
-#: build/blocks/slider/index.js:4
+#: build/blocks/slider/index.js:3
 msgid "Link prefix"
 msgstr "Prefijo del enlace"
 
-#: build/blocks/slider/index.js:4
+#: build/blocks/slider/index.js:3
 msgid "Slides without a link name of their own get #prefix-1, #prefix-2…"
 msgstr "Las diapositivas sin nombre de enlace propio reciben #prefix-1, #prefix-2…"
 
-#: build/blocks/slider/index.js:4
+#: build/blocks/slider/index.js:3
 msgid "Arrow colors"
 msgstr "Colores de las flechas"
 
-#: build/blocks/slider/index.js:4
+#: build/blocks/slider/index.js:3
 msgid "Arrow"
 msgstr "Flecha"
 
-#: build/blocks/slider/index.js:4
-#: build/blocks/slider/index.js:5
-#: build/pro/editor.js:1
+#: build/blocks/slider/index.js:3
 msgid "Background"
 msgstr "Fondo"
 
-#: build/blocks/slider/index.js:4
+#: build/blocks/slider/index.js:3
 msgid "Arrow on hover"
 msgstr "Flecha al pasar el cursor"
 
-#: build/blocks/slider/index.js:4
+#: build/blocks/slider/index.js:3
 msgid "Background on hover"
 msgstr "Fondo al pasar el cursor"
 
-#: build/blocks/slider/index.js:4
+#: build/blocks/slider/index.js:3
 msgid "Pagination color"
 msgstr "Color de la paginación"
 
-#: build/blocks/slider/index.js:4
-msgid "Dots, numbers and bar"
-msgstr "Puntos, números y barra"
-
-#: build/blocks/slider/index.js:4
+#: build/blocks/slider/index.js:3
 msgid "Play when the slide shows"
 msgstr "Reproducir al mostrarse la diapositiva"
 
-#: build/blocks/slider/index.js:4
+#: build/blocks/slider/index.js:3
 msgid "Otherwise a play button. Videos pause when their slide leaves."
 msgstr "Si no, un botón de reproducción. Los vídeos se pausan cuando su diapositiva sale."
 
-#: build/blocks/slider/index.js:4
+#: build/blocks/slider/index.js:3
 msgid "As the slider (on)"
 msgstr "Como el slider (activado)"
 
-#: build/blocks/slider/index.js:4
+#: build/blocks/slider/index.js:3
 msgid "As the slider (off)"
 msgstr "Como el slider (desactivado)"
 
-#: build/blocks/slider/index.js:4
+#: build/blocks/slider/index.js:3
 msgid "On"
 msgstr "Activado"
 
-#: build/blocks/slider/index.js:4
+#: build/blocks/slider/index.js:3
 msgid "Off"
 msgstr "Desactivado"
 
-#: build/blocks/slider/index.js:4
+#: build/blocks/slider/index.js:3
 msgid "No video found."
 msgstr "No se encontró ningún vídeo."
 
-#: build/blocks/slider/index.js:4
+#: build/blocks/slider/index.js:3
 msgid "Video link"
 msgstr "Enlace del vídeo"
 
-#: build/blocks/slider/index.js:4
+#: build/blocks/slider/index.js:3
 msgid "Load"
 msgstr "Cargar"
 
-#: build/blocks/slider/index.js:4
-msgid "YouTube, or a video file (.mp4, .webm); with Gutenslider Pro also Vimeo, Dailymotion and TikTok."
-msgstr "YouTube o un archivo de vídeo (.mp4, .webm); con Gutenslider Pro también Vimeo, Dailymotion y TikTok."
-
-#: build/blocks/slider/index.js:4
-#: build/blocks/slider/index.js:5
+#: build/blocks/slider/index.js:3
 msgid "Size"
 msgstr "Tamaño"
 
-#: build/blocks/slider/index.js:4
+#: build/blocks/slider/index.js:3
 msgid "Whole video"
 msgstr "Vídeo completo"
 
-#: build/blocks/slider/index.js:4
+#: build/blocks/slider/index.js:3
 msgid "Fill the slide"
 msgstr "Llenar la diapositiva"
 
-#: build/blocks/slider/index.js:4
-#: build/blocks/slider/index.js:5
+#: build/blocks/slider/index.js:3
 msgid "Muted"
 msgstr "Silenciado"
 
-#: build/blocks/slider/index.js:4
-#: build/blocks/slider/index.js:5
+#: build/blocks/slider/index.js:3
 msgid "Browsers only start videos with sound after a click."
 msgstr "Los navegadores solo inician vídeos con sonido tras un clic."
 
-#: build/blocks/slider/index.js:4
+#: build/blocks/slider/index.js:3
 msgid "With the slider’s autoplay, a video plays once and the slider moves on."
 msgstr "Con la reproducción automática del slider, un vídeo se reproduce una vez y el slider avanza."
 
-#: build/blocks/slider/index.js:4
+#: build/blocks/slider/index.js:3
 msgid "Player controls"
 msgstr "Controles del reproductor"
 
-#: build/blocks/slider/index.js:4
+#: build/blocks/slider/index.js:3
 msgid "Playlists and channels"
 msgstr "Listas de reproducción y canales"
 
-#: build/blocks/slider/index.js:4
+#: build/blocks/slider/index.js:3
 msgid "Videos per link"
 msgstr "Vídeos por enlace"
 
-#: build/blocks/slider/index.js:4
+#: build/blocks/slider/index.js:3
 msgid "The first ones, in the order below."
 msgstr "Los primeros, en el orden de abajo."
 
-#: build/blocks/slider/index.js:4
+#: build/blocks/slider/index.js:3
 msgid "Order"
 msgstr "Orden"
 
-#: build/blocks/slider/index.js:4
+#: build/blocks/slider/index.js:3
 msgid "As listed (channels: newest first)"
 msgstr "Como en la lista (canales: los más nuevos primero)"
 
-#: build/blocks/slider/index.js:4
+#: build/blocks/slider/index.js:3
 msgid "Reversed (channels: oldest first)"
 msgstr "Invertido (canales: los más antiguos primero)"
 
-#: build/blocks/slider/index.js:4
+#: build/blocks/slider/index.js:3
 msgid "Include YouTube Shorts"
 msgstr "Incluir YouTube Shorts"
 
-#: build/blocks/slider/index.js:4
+#: build/blocks/slider/index.js:3
 msgid "Shorts play upright (9:16)."
 msgstr "Los Shorts se reproducen en vertical (9:16)."
 
-#: build/blocks/slider/index.js:4
-#: build/blocks/slider/index.js:5
+#: build/blocks/slider/index.js:3
 msgid "Add videos"
 msgstr "Añadir vídeos"
 
-#: build/blocks/slider/index.js:4
+#: build/blocks/slider/index.js:3
 msgid "Video links"
 msgstr "Enlaces de vídeo"
 
-#: build/blocks/slider/index.js:4
-msgid "One per line; each video becomes a slide. YouTube videos and playlists, and links to video files (.mp4, .webm, .mov, .ogv). With Gutenslider Pro also YouTube channels, Vimeo (videos, users, channels, showcases), Dailymotion (videos, users, playlists) and TikTok (video links, several at once). The thumbnails are saved to the Media Library."
-msgstr "Uno por línea; cada vídeo se convierte en una diapositiva. Vídeos y listas de reproducción de YouTube, y enlaces a archivos de vídeo (.mp4, .webm, .mov, .ogv). Con Gutenslider Pro también canales de YouTube, Vimeo (vídeos, usuarios, canales, showcases), Dailymotion (vídeos, usuarios, listas de reproducción) y TikTok (enlaces de vídeos, varios a la vez). Las miniaturas se guardan en la biblioteca de medios."
-
-#. translators: %s: video platforms, e.g. "Vimeo, TikTok"
-#: build/blocks/slider/index.js:5
-#, js-format
-msgid "%s links need Gutenslider Pro."
-msgstr "Los enlaces de %s requieren Gutenslider Pro."
-
-#: build/blocks/slider/index.js:5
+#: build/blocks/slider/index.js:3
 msgid "Cancel"
 msgstr "Cancelar"
 
-#: build/blocks/slider/index.js:5
+#: build/blocks/slider/index.js:3
 msgid "Reading the links…"
 msgstr "Leyendo los enlaces…"
 
-#: build/blocks/slider/index.js:5
+#: build/blocks/slider/index.js:3
 msgctxt "background size"
 msgid "Fill the slide (crop)"
 msgstr "Llenar la diapositiva (recortar)"
 
-#: build/blocks/slider/index.js:5
+#: build/blocks/slider/index.js:3
 msgctxt "background size"
 msgid "Show all of it"
 msgstr "Mostrar entera"
 
-#: build/blocks/slider/index.js:5
+#: build/blocks/slider/index.js:3
 msgctxt "background size"
 msgid "Stretch"
 msgstr "Estirar"
 
-#: build/blocks/slider/index.js:5
+#: build/blocks/slider/index.js:3
 msgctxt "background size"
 msgid "Original size"
 msgstr "Tamaño original"
 
-#: build/blocks/slider/index.js:5
-#: build/blocks/slider/index.js:9
+#: build/blocks/slider/index.js:3
+#: build/blocks/slider/index.js:7
 msgid "Replace"
 msgstr "Reemplazar"
 
-#: build/blocks/slider/index.js:5
+#: build/blocks/slider/index.js:3
 msgid "Remove"
 msgstr "Eliminar"
 
-#: build/blocks/slider/index.js:5
+#: build/blocks/slider/index.js:3
 msgid "Overlay"
 msgstr "Superposición"
 
-#: build/blocks/slider/index.js:5
+#: build/blocks/slider/index.js:3
 msgctxt "overlay"
 msgid "None"
 msgstr "Ninguna"
 
-#: build/blocks/slider/index.js:5
+#: build/blocks/slider/index.js:3
 msgid "Gradient"
 msgstr "Degradado"
 
-#: build/blocks/slider/index.js:5
+#: build/blocks/slider/index.js:3
 msgid "Overlay opacity"
 msgstr "Opacidad de la superposición"
 
-#: build/blocks/slider/index.js:5
+#: build/blocks/slider/index.js:3
 #: build/pro/editor.js:1
 msgid "Type"
 msgstr "Tipo"
 
-#: build/blocks/slider/index.js:5
+#: build/blocks/slider/index.js:3
 msgid "Image"
 msgstr "Imagen"
 
-#: build/blocks/slider/index.js:5
+#: build/blocks/slider/index.js:3
 msgid "Video"
 msgstr "Vídeo"
 
-#: build/blocks/slider/index.js:5
+#: build/blocks/slider/index.js:3
 msgctxt "gradient, short"
 msgid "Grad."
 msgstr "Degr."
 
-#: build/blocks/slider/index.js:5
+#: build/blocks/slider/index.js:3
 msgctxt "background"
 msgid "None"
 msgstr "Ninguno"
 
-#: build/blocks/slider/index.js:5
+#: build/blocks/slider/index.js:3
 msgid "Image and focal point"
 msgstr "Imagen y punto focal"
 
-#: build/blocks/slider/index.js:5
+#: build/blocks/slider/index.js:3
 msgid "Choose image"
 msgstr "Elegir imagen"
 
-#: build/blocks/slider/index.js:5
+#: build/blocks/slider/index.js:3
 msgid "Video from"
 msgstr "Vídeo de"
 
-#: build/blocks/slider/index.js:5
+#: build/blocks/slider/index.js:3
 msgid "Media Library"
 msgstr "Biblioteca de medios"
 
-#: build/blocks/slider/index.js:5
+#: build/blocks/slider/index.js:3
 msgid "Link"
 msgstr "Enlace"
 
-#: build/blocks/slider/index.js:5
+#: build/blocks/slider/index.js:3
 msgid "Choose video"
 msgstr "Elegir vídeo"
 
-#: build/blocks/slider/index.js:5
+#: build/blocks/slider/index.js:3
 msgid "Poster image"
 msgstr "Imagen de póster"
 
-#: build/blocks/slider/index.js:5
+#: build/blocks/slider/index.js:3
 msgid "Shows while the video loads, and in the lightbox thumbnails."
 msgstr "Se muestra mientras carga el vídeo y en las miniaturas de la lightbox."
 
-#: build/blocks/slider/index.js:5
+#: build/blocks/slider/index.js:3
 msgid "Choose poster"
 msgstr "Elegir póster"
 
-#: build/blocks/slider/index.js:5
+#: build/blocks/slider/index.js:3
 msgid "Pause when the slide is not shown"
 msgstr "Pausar cuando la diapositiva no se muestra"
 
-#: build/blocks/slider/index.js:5
+#: build/blocks/slider/index.js:3
 msgid "Focal point"
 msgstr "Punto focal"
 
-#: build/blocks/slider/index.js:5
+#: build/blocks/slider/index.js:3
 msgid "Slide width"
 msgstr "Ancho de la diapositiva"
 
-#: build/blocks/slider/index.js:5
+#: build/blocks/slider/index.js:3
 msgid "Slides without an image or video need a width when the slider sizes slides by their content."
 msgstr "Las diapositivas sin imagen ni vídeo necesitan un ancho cuando el slider dimensiona las diapositivas según su contenido."
 
-#: build/blocks/slider/index.js:5
+#: build/blocks/slider/index.js:3
 msgid "Slide text…"
 msgstr "Texto de la diapositiva…"
 
 #. translators: %d: slide number
-#: build/blocks/slider/index.js:6
+#: build/blocks/slider/index.js:4
 #, js-format
 msgid "Show slide %d"
 msgstr "Mostrar diapositiva %d"
 
-#: build/blocks/slider/index.js:6
+#: build/blocks/slider/index.js:4
 msgid "Choose images or videos – each becomes a slide – or start with empty slides and add any blocks to them."
 msgstr "Elige imágenes o vídeos (cada uno se convierte en una diapositiva) o empieza con diapositivas vacías y añádeles cualquier bloque."
 
-#: build/blocks/slider/index.js:6
+#: build/blocks/slider/index.js:4
 msgid "Videos from links"
 msgstr "Vídeos desde enlaces"
 
-#: build/blocks/slider/index.js:6
+#: build/blocks/slider/index.js:4
 msgid "Start with empty slides"
 msgstr "Empezar con diapositivas vacías"
 
 #. translators: %d: number of videos
-#: build/blocks/slider/index.js:8
+#: build/blocks/slider/index.js:6
 #, js-format
 msgid "%d video added."
 msgid_plural "%d videos added."
 msgstr[0] "%d vídeo añadido."
 msgstr[1] "%d vídeos añadidos."
 
-#: build/blocks/slider/index.js:8
+#: build/blocks/slider/index.js:6
 msgid "Content position of all slides"
 msgstr "Posición del contenido de todas las diapositivas"
 
-#: build/blocks/slider/index.js:8
+#: build/blocks/slider/index.js:6
 msgid "Edit the slides"
 msgstr "Editar las diapositivas"
 
-#: build/blocks/slider/index.js:8
+#: build/blocks/slider/index.js:6
 msgid "Edit"
 msgstr "Editar"
 
-#: build/blocks/slider/index.js:8
+#: build/blocks/slider/index.js:6
 msgid "Preview: the slider as visitors see it, with its effect and autoplay"
 msgstr "Vista previa: el slider tal como lo ven los visitantes, con su efecto y reproducción automática"
 
-#: build/blocks/slider/index.js:8
+#: build/blocks/slider/index.js:6
 msgid "Preview"
 msgstr "Vista previa"
 
-#: build/blocks/slider/index.js:8
+#: build/blocks/slider/index.js:6
 msgid "Add slides from the Media Library"
 msgstr "Añadir diapositivas desde la biblioteca de medios"
 
-#: build/blocks/slider/index.js:8
+#: build/blocks/slider/index.js:6
 msgid "Add videos from links"
 msgstr "Añadir vídeos desde enlaces"
 
-#: build/blocks/slider/index.js:8
+#: build/blocks/slider/index.js:6
 msgid "Add an empty slide"
 msgstr "Añadir una diapositiva vacía"
 
 #. translators: 1: current slide number, 2: number of slides
-#: build/blocks/slider/index.js:9
+#: build/blocks/slider/index.js:7
 #, js-format
 msgid "Slide %1$d of %2$d"
 msgid_plural "Slide %1$d of %2$d"
 msgstr[0] "Diapositiva %1$d de %2$d"
 msgstr[1] "Diapositiva %1$d de %2$d"
 
-#: build/blocks/slider/index.js:9
+#: build/blocks/slider/index.js:7
 msgid "Slide"
 msgstr "Diapositiva"
 
-#: build/blocks/slider/index.js:9
+#: build/blocks/slider/index.js:7
 msgid "Add content on top"
 msgstr "Añadir contenido encima"
 
-#: build/blocks/slider/index.js:9
+#: build/blocks/slider/index.js:7
 msgid "Some blocks here only show with \"Same on all\" content."
 msgstr "Algunos bloques de aquí solo se muestran con el contenido «Igual en todas»."
 
-#: build/blocks/slider/index.js:9
+#: build/blocks/slider/index.js:7
 msgid "Slides with any blocks on top"
 msgstr "Diapositivas con cualquier bloque encima"
 
-#: build/blocks/slider/index.js:9
+#: build/blocks/slider/index.js:7
 msgid "Images and videos"
 msgstr "Imágenes y vídeos"
 
-#: build/blocks/slider/index.js:9
+#: build/blocks/slider/index.js:7
 msgid "Content position"
 msgstr "Posición del contenido"
 
-#: build/blocks/slider/index.js:9
+#: build/blocks/slider/index.js:7
 msgid "Link the slide"
 msgstr "Enlazar la diapositiva"
 
-#: build/blocks/slider/index.js:9
+#: build/blocks/slider/index.js:7
 msgid "Add media"
 msgstr "Añadir medios"
 
-#: build/blocks/slider/index.js:9
+#: build/blocks/slider/index.js:7
 msgid "Hide this slide"
 msgstr "Ocultar esta diapositiva"
 
-#: build/blocks/slider/index.js:9
+#: build/blocks/slider/index.js:7
 msgid "Hidden slides stay in the editor, but visitors do not see them."
 msgstr "Las diapositivas ocultas siguen en el editor, pero los visitantes no las ven."
 
-#: build/blocks/slider/index.js:9
+#: build/blocks/slider/index.js:7
 msgid "Slide link name"
 msgstr "Nombre del enlace de la diapositiva"
 
-#: build/blocks/slider/index.js:9
+#: build/blocks/slider/index.js:7
 msgid "With hash navigation on (slider settings), the address ends in #this-name while the slide shows. Empty: numbered."
 msgstr "Con la navegación por hash activada (ajustes del slider), la dirección termina en #this-name mientras se muestra la diapositiva. Vacío: numerada."
 
-#: build/blocks/slider/index.js:9
+#: build/blocks/slider/index.js:7
 msgid "Hidden"
 msgstr "Oculta"
 
-#: build/blocks/slider/index.js:9
+#: build/blocks/slider/index.js:7
 msgid "Linked"
 msgstr "Enlazada"
 
-#: build/pro/editor.js:1
+#: build/blocks/slider/index.js:3
 msgctxt "blend mode"
 msgid "Normal"
 msgstr "Normal"
 
-#: build/pro/editor.js:1
+#: build/blocks/slider/index.js:3
 msgid "Color burn"
 msgstr "Subexposición de color"
 
-#: build/pro/editor.js:1
+#: build/blocks/slider/index.js:3
 msgid "Color dodge"
 msgstr "Sobreexposición de color"
 
-#: build/pro/editor.js:1
+#: build/blocks/slider/index.js:3
 msgid "Difference"
 msgstr "Diferencia"
 
-#: build/pro/editor.js:1
+#: build/blocks/slider/index.js:3
 msgid "Exclusion"
 msgstr "Exclusión"
 
-#: build/pro/editor.js:1
+#: build/blocks/slider/index.js:3
 msgid "Saturation"
 msgstr "Saturación"
 
@@ -1059,7 +1012,7 @@ msgctxt "slider effect"
 msgid "Cube"
 msgstr "Cubo"
 
-#: build/pro/editor.js:1
+#: build/blocks/slider/index.js:3
 msgctxt "slider effect"
 msgid "Flip"
 msgstr "Voltear"
@@ -1202,11 +1155,11 @@ msgctxt "slider effect"
 msgid "Chroma"
 msgstr "Croma"
 
-#: build/pro/editor.js:1
+#: build/blocks/slider/index.js:3
 msgid "Transition time (s)"
 msgstr "Tiempo de transición (s)"
 
-#: build/pro/editor.js:1
+#: build/blocks/slider/index.js:3
 msgid "Time per slide (s)"
 msgstr "Tiempo por diapositiva (s)"
 
@@ -1230,10 +1183,12 @@ msgstr "Arriba"
 msgid "Down"
 msgstr "Abajo"
 
+#: build/blocks/slider/index.js:3
 #: build/pro/editor.js:1
 msgid "Left"
 msgstr "Izquierda"
 
+#: build/blocks/slider/index.js:3
 #: build/pro/editor.js:1
 msgid "Right"
 msgstr "Derecha"
@@ -1242,35 +1197,35 @@ msgstr "Derecha"
 msgid "Parallax strength"
 msgstr "Intensidad del parallax"
 
-#: build/pro/editor.js:1
+#: build/blocks/slider/index.js:3
 msgid "Position"
 msgstr "Posición"
 
-#: build/pro/editor.js:1
+#: build/blocks/slider/index.js:3
 msgid "Left and right"
 msgstr "Izquierda y derecha"
 
-#: build/pro/editor.js:1
+#: build/blocks/slider/index.js:3
 msgid "Next to the blocks"
 msgstr "Junto a los bloques"
 
-#: build/pro/editor.js:1
+#: build/blocks/slider/index.js:3
 msgid "Top and bottom"
 msgstr "Arriba y abajo"
 
-#: build/pro/editor.js:1
+#: build/blocks/slider/index.js:3
 msgid "Bottom right"
 msgstr "Abajo a la derecha"
 
-#: build/pro/editor.js:1
+#: build/blocks/slider/index.js:3
 msgid "Bottom left"
 msgstr "Abajo a la izquierda"
 
-#: build/pro/editor.js:1
+#: build/blocks/slider/index.js:3
 msgid "Top right"
 msgstr "Arriba a la derecha"
 
-#: build/pro/editor.js:1
+#: build/blocks/slider/index.js:3
 msgid "Top left"
 msgstr "Arriba a la izquierda"
 
@@ -1278,22 +1233,23 @@ msgstr "Arriba a la izquierda"
 msgid "Follow the pointer"
 msgstr "Seguir el puntero"
 
-#: build/pro/editor.js:1
+#: build/blocks/slider/index.js:3
 msgid "Move sideways, px"
 msgstr "Mover a los lados, px"
 
-#: build/pro/editor.js:1
+#: build/blocks/slider/index.js:3
 msgid "Move up or down, px"
 msgstr "Mover arriba o abajo, px"
 
-#: build/pro/editor.js:1
+#: build/blocks/slider/index.js:3
 msgid "Space between the arrows, px"
 msgstr "Espacio entre las flechas, px"
 
-#: build/pro/editor.js:1
+#: build/blocks/slider/index.js:3
 msgid "Blend with the slide"
 msgstr "Fundir con la diapositiva"
 
+#: build/blocks/slider/index.js:3
 #: build/pro/editor.js:1
 msgid "Dots"
 msgstr "Puntos"
@@ -1322,76 +1278,76 @@ msgstr "Barra de progreso"
 msgid "Dot style"
 msgstr "Estilo de los puntos"
 
-#: build/pro/editor.js:1
+#: build/blocks/slider/index.js:3
 msgid "Height in px"
 msgstr "Altura en px"
 
-#: build/pro/editor.js:1
+#: build/blocks/slider/index.js:3
 msgid "Invert the shape"
 msgstr "Invertir la forma"
 
-#: build/pro/editor.js:1
+#: build/blocks/slider/index.js:3
 msgid "Nothing"
 msgstr "Nada"
 
-#: build/pro/editor.js:1
+#: build/blocks/slider/index.js:3
 msgid "Image title"
 msgstr "Título de la imagen"
 
-#: build/pro/editor.js:1
+#: build/blocks/slider/index.js:3
 msgid "Image caption"
 msgstr "Leyenda de la imagen"
 
-#: build/pro/editor.js:1
+#: build/blocks/slider/index.js:3
 msgid "Image description"
 msgstr "Descripción de la imagen"
 
-#: build/pro/editor.js:1
+#: build/blocks/slider/index.js:3
 msgid "Alternative text"
 msgstr "Texto alternativo"
 
-#: build/pro/editor.js:1
+#: build/blocks/slider/index.js:3
 msgid "Blending"
 msgstr "Fusión"
 
-#: build/pro/editor.js:1
+#: build/blocks/slider/index.js:3
 msgid "Content blend mode"
 msgstr "Modo de fusión del contenido"
 
-#: build/pro/editor.js:1
+#: build/blocks/slider/index.js:3
 msgid "How the blocks on the slides mix with the backgrounds."
 msgstr "Cómo se mezclan los bloques de las diapositivas con los fondos."
 
-#: build/pro/editor.js:1
+#: build/blocks/slider/index.js:3
 msgid "Content opacity"
 msgstr "Opacidad del contenido"
 
-#: build/pro/editor.js:1
+#: build/blocks/slider/index.js:3
 msgid "Opening"
 msgstr "Apertura"
 
-#: build/pro/editor.js:1
+#: build/blocks/slider/index.js:3
 msgctxt "lightbox opening"
 msgid "Grow"
 msgstr "Crecer"
 
-#: build/pro/editor.js:1
+#: build/blocks/slider/index.js:3
 msgid "Fade"
 msgstr "Fundido"
 
-#: build/pro/editor.js:1
+#: build/blocks/slider/index.js:3
 msgid "Heading"
 msgstr "Encabezado"
 
-#: build/pro/editor.js:1
+#: build/blocks/slider/index.js:3
 msgid "Text"
 msgstr "Texto"
 
-#: build/pro/editor.js:1
+#: build/blocks/slider/index.js:3
 msgid "Counter (3 / 12)"
 msgstr "Contador (3 / 12)"
 
-#: build/pro/editor.js:1
+#: build/blocks/slider/index.js:3
 msgid "Thumbnails"
 msgstr "Miniaturas"
 
@@ -1403,11 +1359,11 @@ msgstr "Botón de zoom"
 msgid "Zoom cursor over the slides"
 msgstr "Cursor de zoom sobre las diapositivas"
 
-#: build/pro/editor.js:1
+#: build/blocks/slider/index.js:3
 msgid "Lightbox colors"
 msgstr "Colores de la lightbox"
 
-#: build/pro/editor.js:1
+#: build/blocks/slider/index.js:3
 msgid "Text and buttons"
 msgstr "Texto y botones"
 
@@ -1455,3 +1411,63 @@ msgstr "galería"
 msgctxt "block keyword"
 msgid "hero"
 msgstr "cabecera"
+
+#: includes/class-render.php:555
+msgid "This is the first slide"
+msgstr "Esta es la primera diapositiva"
+
+#: includes/class-render.php:556
+msgid "This is the last slide"
+msgstr "Esta es la última diapositiva"
+
+#. translators: %d: slide number
+#: includes/class-render.php:558
+#, php-format
+msgid "Go to slide %d"
+msgstr "Ir a la diapositiva %d"
+
+#: includes/freemius.php:98
+msgid "Gutenslider"
+msgstr "Gutenslider"
+
+#. translators: %s: a saved setting value
+#: build/blocks/slider/index.js:3
+#, js-format
+msgid "%s (saved value)"
+msgstr "%s (valor guardado)"
+
+#: build/blocks/slider/index.js:3
+msgid "Uses the lightbox colors from the Styles tab."
+msgstr "Usa los colores de la lightbox de la pestaña Estilos."
+
+#: build/blocks/slider/index.js:3
+msgid "YouTube, or a video file (.mp4, .webm)."
+msgstr "YouTube o un archivo de vídeo (.mp4, .webm)."
+
+#: build/blocks/slider/index.js:3
+msgid "One per line; each video becomes a slide. YouTube videos and playlists, and links to video files (.mp4, .webm, .mov, .ogv). The thumbnails are saved to the Media Library."
+msgstr "Uno por línea; cada vídeo se convierte en una diapositiva. Vídeos y listas de reproducción de YouTube, y enlaces a archivos de vídeo (.mp4, .webm, .mov, .ogv). Las miniaturas se guardan en la biblioteca de medios."
+
+#: build/pro/editor.js:1
+msgid "Vertical"
+msgstr "Vertical"
+
+#: build/pro/editor.js:1
+msgid "The slides move up and down. The slider keeps its height."
+msgstr "Las diapositivas se mueven hacia arriba y hacia abajo. El slider mantiene su altura."
+
+#: build/pro/editor.js:1
+msgid "Bottom left (numbers)"
+msgstr "Abajo a la izquierda (números)"
+
+#: build/pro/editor.js:1
+msgid "Bottom right (numbers)"
+msgstr "Abajo a la derecha (números)"
+
+#: build/pro/editor.js:1
+msgid "Top left (numbers)"
+msgstr "Arriba a la izquierda (números)"
+
+#: build/pro/editor.js:1
+msgid "Top right (numbers)"
+msgstr "Arriba a la derecha (números)"

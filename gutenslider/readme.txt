@@ -4,7 +4,7 @@ Tags: slider, carousel, slideshow, hero, image slider
 Requires at least: 6.6
 Tested up to: 7.1
 Requires PHP: 7.4
-Stable tag: 7.3.2
+Stable tag: 7.3.3
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -13,6 +13,8 @@ A slider block for images, videos and any blocks on top: carousels, hero sliders
 == Description ==
 
 Gutenslider adds a slider block to the block editor. Each slide has a background (image, video, color or gradient) and holds any blocks you like on top: headings, paragraphs, buttons, columns. You build and style the slider where you write your content, and the editor shows it the way visitors will see it.
+
+https://www.youtube.com/watch?v=Qkr8BlGQL-o
 
 **[Examples and documentation](https://gutenslider.org/examples/)**
 
@@ -127,6 +129,14 @@ You can help translate Gutenslider at [translate.wordpress.org](https://translat
 
 == Changelog ==
 
+= 7.3.3 =
+_2026-10-28_
+
+* Fix: background images set to "cover" are sharp on phones and in tall or full-screen sliders. The browser now loads a file as wide as the image is drawn, not one as wide as the slide.
+* Fix: the arrows, dots and slider announcements for screen readers are in the site's language (they were always English).
+* Fix: "Random order" with optimizers that combine and defer inline scripts (LiteSpeed Cache): no error in the browser console, and the order is still random.
+* Missing translations added for the strings new in 7.3.2.
+
 = 7.3.2 =
 _2026-10-26_
 
@@ -208,8 +218,6 @@ _2026-09-28_
 * Fix arrow formatting when arrows are disabled.
 * Fix chunk names that confused caching plugins.
 
-= 6.1.1 =
-* Fix a bug when editing sliders.
 
 
 

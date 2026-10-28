@@ -28,6 +28,7 @@ final class Plugin {
 		add_action( 'enqueue_block_editor_assets', array( __CLASS__, 'editor_data' ) );
 		add_filter( 'plugin_row_meta', array( __CLASS__, 'row_meta' ), 10, 2 );
 		add_filter( 'gutenslider_file_link_attributes', array( __CLASS__, 'photoswipe_gallery' ), 10, 2 );
+		add_filter( 'wp_content_img_tag', array( Render::class, 'cover_img_tag' ) );
 	}
 
 	/**
