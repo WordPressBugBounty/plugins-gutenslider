@@ -496,6 +496,7 @@ final class Render {
 				'delay'                => (int) round( (float) $attr['duration'] * 1000 ),
 				'pauseOnMouseEnter'    => (bool) $attr['pauseOnHover'],
 				'disableOnInteraction' => ! $attr['pauseOnHover'],
+				'reducedMotion'        => ! empty( $attr['autoplayReducedMotion'] ),
 			) : false,
 			'speed'             => (int) round( (float) $attr['fadeSpeed'] * 1000 ),
 			'direction'         => 'horizontal',

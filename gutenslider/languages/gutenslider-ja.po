@@ -51,11 +51,11 @@ msgstr "動画を再生: %s"
 msgid "Play video"
 msgstr "動画を再生"
 
-#: includes/class-plugin.php:122
+#: includes/class-plugin.php:123
 msgid "Sliders"
 msgstr "スライダー"
 
-#: includes/class-plugin.php:161
+#: includes/class-plugin.php:162
 msgid "Documentation"
 msgstr "ドキュメント"
 
@@ -68,43 +68,43 @@ msgid "Slider"
 msgstr "スライダー"
 
 #: includes/class-render.php:412
-#: includes/class-render.php:553
+#: includes/class-render.php:554
 #: build/blocks/slider/index.js:6
 msgid "Previous slide"
 msgstr "前のスライド"
 
 #: includes/class-render.php:414
-#: includes/class-render.php:554
+#: includes/class-render.php:555
 #: build/blocks/slider/index.js:6
 msgid "Next slide"
 msgstr "次のスライド"
 
-#: includes/class-render.php:989
+#: includes/class-render.php:1014
 msgid "Open link"
 msgstr "リンクを開く"
 
-#: includes/class-render.php:999
+#: includes/class-render.php:1024
 msgid "Open image"
 msgstr "画像を開く"
 
-#: includes/class-render.php:1012
+#: includes/class-render.php:1037
 msgctxt "ARIA role description"
 msgid "slide"
 msgstr "スライド"
 
-#: includes/class-render.php:1162
+#: includes/class-render.php:1187
 msgid "Image viewer"
 msgstr "画像ビューアー"
 
-#: includes/class-render.php:1163
+#: includes/class-render.php:1188
 msgid "Close"
 msgstr "閉じる"
 
-#: includes/class-render.php:1164
+#: includes/class-render.php:1189
 msgid "Previous image"
 msgstr "前の画像"
 
-#: includes/class-render.php:1165
+#: includes/class-render.php:1190
 msgid "Next image"
 msgstr "次の画像"
 
@@ -117,7 +117,7 @@ msgid "Zoom out"
 msgstr "縮小"
 
 #. translators: %d: image number in the lightbox
-#: includes/class-render.php:1167
+#: includes/class-render.php:1192
 #, php-format
 msgid "Show image %d"
 msgstr "画像%dを表示"
@@ -425,10 +425,6 @@ msgstr "アクティブなスライドを中央に配置"
 #: build/blocks/slider/index.js:3
 msgid "Autoplay"
 msgstr "自動再生"
-
-#: build/blocks/slider/index.js:3
-msgid "Stops for visitors who prefer reduced motion."
-msgstr "動きを減らす設定の訪問者には停止します。"
 
 #: build/blocks/slider/index.js:3
 msgid "Pause while the pointer is over the slider"
@@ -1410,16 +1406,16 @@ msgctxt "block keyword"
 msgid "hero"
 msgstr "ヒーロー"
 
-#: includes/class-render.php:555
+#: includes/class-render.php:556
 msgid "This is the first slide"
 msgstr "最初のスライドです"
 
-#: includes/class-render.php:556
+#: includes/class-render.php:557
 msgid "This is the last slide"
 msgstr "最後のスライドです"
 
 #. translators: %d: slide number
-#: includes/class-render.php:558
+#: includes/class-render.php:559
 #, php-format
 msgid "Go to slide %d"
 msgstr "スライド%dへ移動"
@@ -1469,3 +1465,15 @@ msgstr "左上（数字）"
 #: build/pro/editor.js:1
 msgid "Top right (numbers)"
 msgstr "右上（数字）"
+
+#: build/blocks/slider/index.js:3
+msgid "Stops for visitors who prefer reduced motion, unless set otherwise under Advanced."
+msgstr "動きを減らす設定の訪問者には停止します（「高度な設定」で変更できます）。"
+
+#: build/blocks/slider/index.js:3
+msgid "Autoplay for visitors who prefer reduced motion"
+msgstr "動きを減らす設定の訪問者にも自動再生"
+
+#: build/blocks/slider/index.js:3
+msgid "For example with animation effects off in Windows. The slides change without a transition."
+msgstr "例：Windows でアニメーション効果をオフにしている場合。スライドはトランジションなしで切り替わります。"

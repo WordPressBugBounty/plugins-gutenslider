@@ -419,7 +419,12 @@ export async function mount( el ) {
 	if ( has( 'dots-lg' ) || has( 'dots-md' ) || has( 'dots-sm' ) ) {
 		wanted.push( 'pagination' );
 	}
-	if ( params.autoplay && ! reducedMotion( win ) ) {
+	// Under reduced motion only if the slider asks for it (Advanced); the
+	// slides then change without a transition (speed 0, below).
+	if (
+		params.autoplay &&
+		( ! reducedMotion( win ) || params.autoplay.reducedMotion )
+	) {
 		wanted.push( 'autoplay' );
 	} else {
 		params.autoplay = false;

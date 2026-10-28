@@ -4,7 +4,7 @@ Tags: slider, carousel, slideshow, hero, image slider
 Requires at least: 6.6
 Tested up to: 7.1
 Requires PHP: 7.4
-Stable tag: 7.3.3
+Stable tag: 7.3.4
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -129,6 +129,12 @@ You can help translate Gutenslider at [translate.wordpress.org](https://translat
 
 == Changelog ==
 
+= 7.3.4 =
+_2026-10-28_
+
+* New: "Autoplay for visitors who prefer reduced motion" in the slider's Advanced settings. Autoplay stops for visitors whose system asks for less motion (for example with animation effects off in Windows); with this on, it keeps running and the slides change without a transition. Off by default.
+* Fix: dots at the side of the slider no longer leave a gap for arrows that are hidden at that screen size.
+
 = 7.3.3 =
 _2026-10-28_
 
@@ -214,9 +220,6 @@ _2026-09-28_
 * Readme: new name and description, External services and Source code sections.
 * Requires WordPress 6.6 and PHP 7.4.
 
-= 6.1.2 =
-* Fix arrow formatting when arrows are disabled.
-* Fix chunk names that confused caching plugins.
 
 
 

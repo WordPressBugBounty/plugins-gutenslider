@@ -340,6 +340,7 @@ export function sliderSettings( input ) {
 					delay: Math.round( Number( attr.duration ) * 1000 ),
 					pauseOnMouseEnter: !! attr.pauseOnHover,
 					disableOnInteraction: ! attr.pauseOnHover,
+					reducedMotion: !! attr.autoplayReducedMotion,
 				}
 			: false,
 		speed: Math.round( Number( attr.fadeSpeed ) * 1000 ),

@@ -29,6 +29,28 @@
 		}
 	}
 
+	// Arrows hidden at a breakpoint leave nothing to clear there.
+	@media only screen and (max-width: 600px) {
+
+		&.arrows-sm-none .eedee-gutenslider-pagination {
+			--gs-dots-clear: 0px;
+		}
+	}
+
+	@media only screen and (min-width: 601px) and (max-width: 960px) {
+
+		&.arrows-md-none .eedee-gutenslider-pagination {
+			--gs-dots-clear: 0px;
+		}
+	}
+
+	@media only screen and (min-width: 961px) {
+
+		&.arrows-lg-none .eedee-gutenslider-pagination {
+			--gs-dots-clear: 0px;
+		}
+	}
+
 	&.dot-position-right .swiper-pagination-bullets.eedee-gutenslider-pagination {
 		margin-right: var(--gs-dots-clear);
 	}

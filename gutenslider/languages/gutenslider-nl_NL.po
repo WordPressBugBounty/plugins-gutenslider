@@ -51,11 +51,11 @@ msgstr "Video afspelen: %s"
 msgid "Play video"
 msgstr "Video afspelen"
 
-#: includes/class-plugin.php:122
+#: includes/class-plugin.php:123
 msgid "Sliders"
 msgstr "Sliders"
 
-#: includes/class-plugin.php:161
+#: includes/class-plugin.php:162
 msgid "Documentation"
 msgstr "Documentatie"
 
@@ -68,43 +68,43 @@ msgid "Slider"
 msgstr "Slider"
 
 #: includes/class-render.php:412
-#: includes/class-render.php:553
+#: includes/class-render.php:554
 #: build/blocks/slider/index.js:6
 msgid "Previous slide"
 msgstr "Vorige slide"
 
 #: includes/class-render.php:414
-#: includes/class-render.php:554
+#: includes/class-render.php:555
 #: build/blocks/slider/index.js:6
 msgid "Next slide"
 msgstr "Volgende slide"
 
-#: includes/class-render.php:989
+#: includes/class-render.php:1014
 msgid "Open link"
 msgstr "Link openen"
 
-#: includes/class-render.php:999
+#: includes/class-render.php:1024
 msgid "Open image"
 msgstr "Afbeelding openen"
 
-#: includes/class-render.php:1012
+#: includes/class-render.php:1037
 msgctxt "ARIA role description"
 msgid "slide"
 msgstr "slide"
 
-#: includes/class-render.php:1162
+#: includes/class-render.php:1187
 msgid "Image viewer"
 msgstr "Afbeeldingsviewer"
 
-#: includes/class-render.php:1163
+#: includes/class-render.php:1188
 msgid "Close"
 msgstr "Sluiten"
 
-#: includes/class-render.php:1164
+#: includes/class-render.php:1189
 msgid "Previous image"
 msgstr "Vorige afbeelding"
 
-#: includes/class-render.php:1165
+#: includes/class-render.php:1190
 msgid "Next image"
 msgstr "Volgende afbeelding"
 
@@ -117,7 +117,7 @@ msgid "Zoom out"
 msgstr "Uitzoomen"
 
 #. translators: %d: image number in the lightbox
-#: includes/class-render.php:1167
+#: includes/class-render.php:1192
 #, php-format
 msgid "Show image %d"
 msgstr "Afbeelding %d tonen"
@@ -425,10 +425,6 @@ msgstr "Actieve slide centreren"
 #: build/blocks/slider/index.js:3
 msgid "Autoplay"
 msgstr "Automatisch afspelen"
-
-#: build/blocks/slider/index.js:3
-msgid "Stops for visitors who prefer reduced motion."
-msgstr "Stopt voor bezoekers die minder beweging verkiezen."
 
 #: build/blocks/slider/index.js:3
 msgid "Pause while the pointer is over the slider"
@@ -1412,16 +1408,16 @@ msgctxt "block keyword"
 msgid "hero"
 msgstr "hero"
 
-#: includes/class-render.php:555
+#: includes/class-render.php:556
 msgid "This is the first slide"
 msgstr "Dit is de eerste slide"
 
-#: includes/class-render.php:556
+#: includes/class-render.php:557
 msgid "This is the last slide"
 msgstr "Dit is de laatste slide"
 
 #. translators: %d: slide number
-#: includes/class-render.php:558
+#: includes/class-render.php:559
 #, php-format
 msgid "Go to slide %d"
 msgstr "Ga naar slide %d"
@@ -1471,3 +1467,15 @@ msgstr "Linksboven (cijfers)"
 #: build/pro/editor.js:1
 msgid "Top right (numbers)"
 msgstr "Rechtsboven (cijfers)"
+
+#: build/blocks/slider/index.js:3
+msgid "Stops for visitors who prefer reduced motion, unless set otherwise under Advanced."
+msgstr "Stopt voor bezoekers die minder beweging willen, tenzij anders ingesteld onder Geavanceerd."
+
+#: build/blocks/slider/index.js:3
+msgid "Autoplay for visitors who prefer reduced motion"
+msgstr "Automatisch afspelen voor bezoekers die minder beweging willen"
+
+#: build/blocks/slider/index.js:3
+msgid "For example with animation effects off in Windows. The slides change without a transition."
+msgstr "Bijvoorbeeld met animatie-effecten uit in Windows. De slides wisselen zonder overgang."

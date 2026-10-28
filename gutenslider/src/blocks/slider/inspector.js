@@ -525,7 +525,7 @@ function MotionPanel( props ) {
 				__nextHasNoMarginBottom
 				label={ __( 'Autoplay', 'gutenslider' ) }
 				help={ __(
-					'Stops for visitors who prefer reduced motion.',
+					'Stops for visitors who prefer reduced motion, unless set otherwise under Advanced.',
 					'gutenslider'
 				) }
 				checked={ !! attributes.autoplay }
@@ -1196,6 +1196,23 @@ function Advanced( { attributes, setAttributes, onCaptions } ) {
 					);
 				} }
 			/>
+			{ attributes.autoplay && (
+				<ToggleControl
+					__nextHasNoMarginBottom
+					label={ __(
+						'Autoplay for visitors who prefer reduced motion',
+						'gutenslider'
+					) }
+					help={ __(
+						'For example with animation effects off in Windows. The slides change without a transition.',
+						'gutenslider'
+					) }
+					checked={ !! attributes.autoplayReducedMotion }
+					onChange={ ( value ) =>
+						setAttributes( { autoplayReducedMotion: value } )
+					}
+				/>
+			) }
 			<ToggleControl
 				__nextHasNoMarginBottom
 				label={ __( 'Arrow keys change slides', 'gutenslider' ) }
