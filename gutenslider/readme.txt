@@ -1,18 +1,20 @@
 === Gutenslider — Slider Block for the Block Editor ===
 Contributors: eedee
-Tags: slider, carousel, slideshow, hero, image slider
+Tags: slider, carousel, slideshow, image slider, video slider
 Requires at least: 6.6
 Tested up to: 7.1
 Requires PHP: 7.4
-Stable tag: 7.3.4
+Stable tag: 7.3.5
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
-A slider block for images, videos and any blocks on top: carousels, hero sliders and fullscreen background sliders.
+A slider and carousel block for images, videos and any blocks on top: hero sliders, content carousels and fullscreen background sliders.
 
 == Description ==
 
 Gutenslider adds a slider block to the block editor. Each slide has a background (image, video, color or gradient) and holds any blocks you like on top: headings, paragraphs, buttons, columns. You build and style the slider where you write your content, and the editor shows it the way visitors will see it.
+
+Show one slide at a time for a hero or a fullscreen background, or several side by side as a carousel: for photos, videos, testimonials or team members, laid out with blocks.
 
 https://www.youtube.com/watch?v=Qkr8BlGQL-o
 
@@ -129,6 +131,11 @@ You can help translate Gutenslider at [translate.wordpress.org](https://translat
 
 == Changelog ==
 
+= 7.3.5 =
+_2026-10-29_
+
+* New plugin icon, on wordpress.org and on the opt-in screen after activation.
+
 = 7.3.4 =
 _2026-10-28_
 
@@ -204,21 +211,6 @@ _2026-09-28_
 * Fix: dots at the side are centered and clear of side arrows; dots on the right and the progress bar sit at the right; the fraction is centered.
 * Fix: arrows next to the blocks stay readable on light backgrounds; text arrows get a soft shadow on photos.
 
-= 7.0.0 =
-_2026-09-28_
-
-* Front end rebuilt on the Interactivity API (view script module); no jQuery.
-* Swiper 14, loaded when a slider comes near the viewport, with only the modules the slider uses.
-* The lightbox is a native `<dialog>` (keyboard, swipe, focus return, captions, thumbnails); lightGallery was removed.
-* Parallax uses CSS instead of simple-parallax-js.
-* No layout shift: the slider's height and layout are rendered on the server before the script runs.
-* Responsive image sizes per breakpoint; the first visible image loads with high priority, the rest lazily.
-* Every value in the block markup is escaped; colors and units are validated.
-* Both blocks are registered from block.json (apiVersion 3, works in the iframed editor).
-* Freemius SDK 2.13, installed with Composer, in anonymous mode with no admin notices or menu pages.
-* Removed: the five-star review link on the Plugins screen, the trial offer, and the old admin page.
-* Readme: new name and description, External services and Source code sections.
-* Requires WordPress 6.6 and PHP 7.4.
 
 
 
