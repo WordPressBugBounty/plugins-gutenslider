@@ -1204,7 +1204,7 @@ function Advanced( { attributes, setAttributes, onCaptions } ) {
 						'gutenslider'
 					) }
 					help={ __(
-						'For example with animation effects off in Windows. The slides change without a transition.',
+						'For example with animation effects off in Windows. The slides fade instead of moving.',
 						'gutenslider'
 					) }
 					checked={ !! attributes.autoplayReducedMotion }

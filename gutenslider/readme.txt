@@ -4,7 +4,7 @@ Tags: slider, carousel, slideshow, image slider, video slider
 Requires at least: 6.6
 Tested up to: 7.1
 Requires PHP: 7.4
-Stable tag: 7.3.5
+Stable tag: 7.3.6
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -131,6 +131,12 @@ You can help translate Gutenslider at [translate.wordpress.org](https://translat
 
 == Changelog ==
 
+= 7.3.6 =
+_2026-10-29_
+
+* Fix: "Autoplay for visitors who prefer reduced motion" no longer stops after the second slide.
+* Reduced motion: the slides fade gently instead of changing at once. A slider that shows one slide at a time crossfades; with several slides on screen they fade out and back in, without moving.
+
 = 7.3.5 =
 _2026-10-29_
 
@@ -194,22 +200,6 @@ _2026-10-05_
 * Fix: arrows that follow the pointer (Pro) show again; the cursor was hidden and no arrow appeared.
 * Fix: when YouTube briefly fails to send a playlist page, the newest 15 videos from its feed are kept for 10 minutes instead of an hour, then the whole list is read again.
 
-= 7.1.0 =
-_2026-09-28_
-
-* New: video slides from links ("Add videos"): YouTube videos and playlists and links to video files; with Pro YouTube channels, Vimeo, Dailymotion and TikTok. How many videos per playlist or channel, in which order, with or without Shorts; the thumbnails are saved to the Media Library once. The player loads for the slide on screen only and pauses when the slide leaves; the slider's autoplay waits for a playing video.
-* New: "Play videos when their slide shows" for the whole slider (a slide can set its own), and one sound for all videos of a slider: mute or set the volume in one, the others follow.
-* New: on small screens the arrows and dots fade over a playing video, clear of the player's controls, and come back on touch, pointer movement or keyboard focus.
-* New: "Link images to the file" (Advanced), for lightbox plugins that open linked images; slides with their own link keep it.
-* New: the lightbox also opens Image and Video blocks on slides (image next to text), in slide order with the backgrounds; the zoom cursor shows only on what opens.
-* New: the slide's blocks can sit below or above the image instead of on it (Slides panel); the image keeps the minimum height, arrows and dots stay on it. Pro: arrows next to the blocks.
-* New: random order (Motion): the slides are shuffled on each visit, also on cached pages, before they show, so the first slide is not swapped.
-* New: an arrow style with text labels, "Previous" and "Next", in the site's font and the arrow colors.
-* Lightbox zoom (Pro) opens a full view: the photo fills the window by width or height, the other controls hide, a click zooms in there, Escape goes back.
-* Fix: replacing a slide's image in the editor shows the new image, not the next slide.
-* Fix: "Width from content" works with loop, and on one device only (e.g. auto on phones, three per view on desktops) without a layout shift.
-* Fix: dots at the side are centered and clear of side arrows; dots on the right and the progress bar sit at the right; the fraction is centered.
-* Fix: arrows next to the blocks stay readable on light backgrounds; text arrows get a soft shadow on photos.
 
 
 

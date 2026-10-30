@@ -12,6 +12,10 @@ export const BREAKPOINTS = [ 600, 960 ];
 const reducedMotion = ( win = window ) =>
 	win.matchMedia( '(prefers-reduced-motion: reduce)' ).matches;
 
+// Reduced motion: the least time a change of slides takes, so a fade is
+// gentle (Advanced: "Autoplay for visitors who prefer reduced motion").
+const CALM_SPEED = 1200;
+
 const controls = () =>
 	import( /* webpackChunkName: "swiper-controls" */ './swiper-controls' );
 const MODULES = {
@@ -327,6 +331,71 @@ function fillLoop( el, params ) {
 }
 
 /**
+ * Reduced motion with several slides on screen, where a crossfade can't
+ * work: the slides fade out, change without moving, and fade back in.
+ * Wraps the methods the arrows, dots, keyboard, autoplay and hash links
+ * call; Swiper's own repositioning (loop, resize, the end of a drag) and
+ * explicit instant changes go straight through.
+ *
+ * @param {Object} swiper Swiper instance.
+ * @param {number} ms     Length of the whole change.
+ */
+function fadeThrough( swiper, ms ) {
+	const box = swiper.el;
+	let passing = false;
+	let fading = false;
+	let touching = false;
+	swiper.on( 'touchEnd', () => {
+		touching = true;
+		setTimeout( () => ( touching = false ) );
+	} );
+	const wrap = ( name, instant ) => {
+		const original = swiper[ name ].bind( swiper );
+		swiper[ name ] = ( ...args ) => {
+			if (
+				passing ||
+				touching ||
+				! swiper.initialized ||
+				instant( args )
+			) {
+				return original( ...args );
+			}
+			if ( fading ) {
+				return false;
+			}
+			fading = true;
+			box.style.transition = `opacity ${ ms / 2 }ms ease`;
+			box.style.opacity = '0';
+			setTimeout( () => {
+				if ( ! swiper.destroyed ) {
+					passing = true;
+					try {
+						original( ...args );
+					} finally {
+						passing = false;
+					}
+				}
+				box.style.opacity = '';
+				setTimeout( () => {
+					fading = false;
+					box.style.transition = '';
+				}, ms / 2 );
+			}, ms / 2 );
+			return true;
+		};
+	};
+	wrap( 'slideNext', () => false );
+	wrap( 'slidePrev', () => false );
+	wrap( 'slideToLoop', ( [ , speed ] ) => speed === 0 );
+	// ( index, speed, runCallbacks, internal, initial )
+	wrap(
+		'slideTo',
+		( [ , speed, runCallbacks, , initial ] ) =>
+			speed === 0 || runCallbacks === false || !! initial
+	);
+}
+
+/**
  * Bullets for a slider with clones, over the real slides only. Built once
  * and updated in place (Swiper's custom pagination rewrites its HTML on
  * every change), so the bullets' transitions run.
@@ -420,7 +489,7 @@ export async function mount( el ) {
 		wanted.push( 'pagination' );
 	}
 	// Under reduced motion only if the slider asks for it (Advanced); the
-	// slides then change without a transition (speed 0, below).
+	// slides then crossfade or change without a transition (below).
 	if (
 		params.autoplay &&
 		( ! reducedMotion( win ) || params.autoplay.reducedMotion )
@@ -440,6 +509,24 @@ export async function mount( el ) {
 		fillHashes( el );
 		wanted.push( 'hashNavigation' );
 	}
+	// Reduced motion: a slider of one slide at a time crossfades instead of
+	// moving; others fade out and in (speed 0, below, and fadeThrough()). At
+	// least CALM_SPEED either way. Not for an effect a view module draws, except one only for
+	// motion, which is not loaded then and leaves its base effect.
+	const calm = reducedMotion( win );
+	const crossfade =
+		calm &&
+		Number( params.slidesPerView ) === 1 &&
+		[ 'slide', 'fade', 'flip' ].includes( params.effect || 'slide' ) &&
+		( settings.modules || [] ).every( ( name ) =>
+			settings.motionOnly?.includes( name )
+		);
+	if ( crossfade ) {
+		params.effect = 'fade';
+		params.fadeEffect = { crossFade: true };
+		params.speed = Math.max( Number( params.speed ) || 0, CALM_SPEED );
+	}
+	const calmSpeed = Math.max( Number( params.speed ) || 0, CALM_SPEED );
 	if ( MODULES[ params.effect ] ) {
 		wanted.push( params.effect );
 	}
@@ -454,7 +541,7 @@ export async function mount( el ) {
 		params,
 		settings,
 		state,
-		reducedMotion: reducedMotion( win ),
+		reducedMotion: calm,
 	};
 	const [ Swiper, extensions, ...modules ] = await Promise.all( [
 		loadSwiper(),
@@ -520,8 +607,13 @@ export async function mount( el ) {
 	for ( const extension of extensions ) {
 		Object.assign( params, extension.params || {} );
 	}
-	if ( reducedMotion( win ) ) {
+	if ( calm && ! crossfade ) {
 		params.speed = 0;
+		// Without a transition there is no transitionend, which autoplay
+		// otherwise waits for after each change: it would stop after one.
+		if ( params.autoplay ) {
+			params.autoplay = { ...params.autoplay, waitForTransition: false };
+		}
 	}
 
 	for ( const key of [
@@ -578,6 +670,9 @@ export async function mount( el ) {
 		} );
 	} finally {
 		window.HTMLElement = HTMLElement;
+	}
+	if ( calm && ! crossfade ) {
+		fadeThrough( swiper, calmSpeed );
 	}
 	state.swiperInstance = swiper;
 	state.youtube?.();
