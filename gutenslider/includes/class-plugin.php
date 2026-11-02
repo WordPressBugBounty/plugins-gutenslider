@@ -148,7 +148,9 @@ final class Plugin {
 	}
 
 	/**
-	 * Documentation link on the Plugins screen.
+	 * Documentation, review and upgrade links on the Plugins screen. The
+	 * review link is neutral (any rating), and Pro, which is installed in its
+	 * own folder, doesn't show the upgrade link.
 	 *
 	 * @param string[] $meta Row meta links.
 	 * @param string   $file Plugin file.
@@ -161,6 +163,18 @@ final class Plugin {
 				esc_url( 'https://gutenslider.org/examples/' ),
 				esc_html__( 'Documentation', 'gutenslider' )
 			);
+			$meta[] = sprintf(
+				'<a href="%1$s">%2$s</a>',
+				esc_url( 'https://wordpress.org/support/plugin/gutenslider/reviews/' ),
+				esc_html__( 'Rate Gutenslider', 'gutenslider' )
+			);
+			if ( 'gutenslider' === dirname( $file ) ) {
+				$meta[] = sprintf(
+					'<a href="%1$s">%2$s</a>',
+					esc_url( 'https://gutenslider.org/pro/#pricing' ),
+					esc_html__( 'Upgrade to Pro', 'gutenslider' )
+				);
+			}
 		}
 		return $meta;
 	}

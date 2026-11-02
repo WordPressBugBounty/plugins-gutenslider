@@ -4,7 +4,7 @@ Tags: slider, carousel, slideshow, image slider, video slider
 Requires at least: 6.6
 Tested up to: 7.1
 Requires PHP: 7.4
-Stable tag: 7.3.6
+Stable tag: 7.3.7
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -131,6 +131,11 @@ You can help translate Gutenslider at [translate.wordpress.org](https://translat
 
 == Changelog ==
 
+= 7.3.7 =
+_2026-11-02_
+
+* Plugins screen: links to rate Gutenslider and, in the free plugin, to upgrade to Pro.
+
 = 7.3.6 =
 _2026-10-29_
 
@@ -190,15 +195,6 @@ _2026-10-12_
 
 * Updated the Freemius SDK to 2.13.5.
 
-= 7.2.0 =
-_2026-10-05_
-
-* New: "Content width" (Slides panel): Wide or Content lines the slides' blocks up with the theme's wide or content width, like the header and the page's text, while the background stays full width. Per slide and "Same on all" alike.
-* In the editor the first click on a slider selects the slider, not the slide or block under the pointer; the next click reaches them.
-* Fix: photos chosen in the Media Library or uploaded in a new slider become image slides again; since 7.1.0 they turned into empty video slides.
-* Fix: in a looped slider with few slides, the copies the loop shows after the last slide take clicks again: the lightbox (with the right photo), links and the video player's controls.
-* Fix: arrows that follow the pointer (Pro) show again; the cursor was hidden and no arrow appeared.
-* Fix: when YouTube briefly fails to send a playlist page, the newest 15 videos from its feed are kept for 10 minutes instead of an hour, then the whole list is read again.
 
 
 
