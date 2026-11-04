@@ -4,7 +4,7 @@ Tags: slider, carousel, slideshow, image slider, video slider
 Requires at least: 6.6
 Tested up to: 7.1
 Requires PHP: 7.4
-Stable tag: 7.3.7
+Stable tag: 7.3.8
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -131,6 +131,11 @@ You can help translate Gutenslider at [translate.wordpress.org](https://translat
 
 == Changelog ==
 
+= 7.3.8 =
+_2026-11-04_
+
+* Fix: uploading images or videos from the slider's placeholder made too many slides (26 slides from 4 images). Each file now becomes one slide. If an upload fails, the editor says so.
+
 = 7.3.7 =
 _2026-11-02_
 
@@ -190,10 +195,6 @@ _2026-10-22_
 * Updated Swiper to 14.3.0; build/ no longer keeps chunks from earlier builds.
 * The plugin ships its build setup (package.json, package-lock.json, webpack.config.js) next to the sources in src/.
 
-= 7.2.1 =
-_2026-10-12_
-
-* Updated the Freemius SDK to 2.13.5.
 
 
 

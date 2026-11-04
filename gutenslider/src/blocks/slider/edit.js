@@ -24,7 +24,13 @@ import {
 	__experimentalBlockAlignmentMatrixControl as BlockAlignmentMatrixControl,
 	store as blockEditorStore,
 } from '@wordpress/block-editor';
-import { Button, ToolbarButton, ToolbarGroup } from '@wordpress/components';
+import {
+	Button,
+	Placeholder,
+	Spinner,
+	ToolbarButton,
+	ToolbarGroup,
+} from '@wordpress/components';
 import { createBlock } from '@wordpress/blocks';
 import { useDispatch, useSelect, useRegistry } from '@wordpress/data';
 import { store as noticesStore } from '@wordpress/notices';
@@ -210,7 +216,18 @@ function Pagination( { attributes, count, current, go } ) {
 	);
 }
 
-function EmptyPlaceholder( { onMedia, onEmpty, onLinks } ) {
+function EmptyPlaceholder( { uploading, onMedia, onError, onEmpty, onLinks } ) {
+	if ( uploading ) {
+		return (
+			<Placeholder
+				icon={ icons.gutenslider }
+				label="Gutenslider"
+				instructions={ __( 'Uploading…', 'gutenslider' ) }
+			>
+				<Spinner />
+			</Placeholder>
+		);
+	}
 	return (
 		<MediaPlaceholder
 			icon={ icons.gutenslider }
@@ -225,6 +242,7 @@ function EmptyPlaceholder( { onMedia, onEmpty, onLinks } ) {
 			allowedTypes={ [ 'image', 'video' ] }
 			multiple
 			onSelect={ onMedia }
+			onError={ onError }
 		>
 			<Button
 				__next40pxDefaultSize
@@ -384,8 +402,56 @@ export default function SliderEdit( props ) {
 				newSlide( m, attributes.contentPosition || 'center center' )
 			)
 		);
+	// The placeholder's media. An upload calls back on every step: with the
+	// whole list so far, or file by file (client-side media, WordPress 7.1),
+	// and with previews that can't be matched to the finished files. So each
+	// finished file becomes one slide, once, and in the list's order; the
+	// whole upload is one step in the undo history.
+	const placed = useRef( new Map() );
+	const [ uploading, setUploading ] = useState( false );
+	const placeMedia = ( items ) => {
+		const { getBlock, getBlockIndex, getBlocks } =
+			registry.select( blockEditorStore );
+		if ( ! getBlock( clientId ) ) {
+			return;
+		}
+		const list = ( Array.isArray( items ) ? items : [ items ] ).filter(
+			( m ) => m.id
+		);
+		setUploading( ! list.length );
+		const slideOf = ( m ) =>
+			getBlock( placed.current.get( m.id ) ) &&
+			placed.current.get( m.id );
+		let first = ! [ ...placed.current.values() ].some( getBlock );
+		list.forEach( ( m, i ) => {
+			if ( slideOf( m ) ) {
+				return;
+			}
+			const slide = newSlide(
+				m,
+				attributes.contentPosition || 'center center'
+			);
+			const before = list.slice( i + 1 ).find( slideOf );
+			if ( ! first ) {
+				dispatch.__unstableMarkNextChangeAsNotPersistent();
+			}
+			dispatch.insertBlocks(
+				[ slide ],
+				before
+					? getBlockIndex( slideOf( before ) )
+					: getBlocks( clientId ).findLastIndex(
+							( b ) => b.name === SLIDE
+						) + 1,
+				clientId,
+				first
+			);
+			placed.current.set( m.id, slide.clientId );
+			first = false;
+		} );
+	};
 	const [ linksOpen, setLinksOpen ] = useState( false );
-	const { createSuccessNotice } = useDispatch( noticesStore );
+	const { createErrorNotice, createSuccessNotice } =
+		useDispatch( noticesStore );
 	const addVideos = ( videos ) => {
 		// A new slider of videos: each slide in its video's ratio.
 		if ( count === 0 ) {
@@ -572,7 +638,12 @@ export default function SliderEdit( props ) {
 			<div { ...blockProps }>
 				{ toolbar }
 				<EmptyPlaceholder
-					onMedia={ addMedia }
+					uploading={ uploading }
+					onMedia={ placeMedia }
+					onError={ ( message ) => {
+						setUploading( false );
+						createErrorNotice( message, { type: 'snackbar' } );
+					} }
 					onEmpty={ () => addEmpty( 2 ) }
 					onLinks={ () => setLinksOpen( true ) }
 				/>
